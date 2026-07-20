@@ -1,0 +1,8 @@
+{
+    "POC": "Proof of Concept",
+    "EDR": "Endpoint Detection and Response",
+    "DLP": "Data Loss Prevention",
+    "BYOD": "Bring Your Own Device",
+    "MDR": "Managed Detection and Response",
+    "XDR": "Extended Detection and Response"
+}

@@ -1,0 +1,13 @@
+{
+    "promptFiles": [
+        "assets/prompt.md",
+        "assets/rules.md",
+        "assets/style.md",
+        "assets/failures.md"
+    ],
+    "normalization": "assets/normalization.json",
+    "glossary": "assets/glossary.json",
+    "generatedPrompt": "generated/system_prompt.md",
+    "inputDirectory": "input",
+    "outputDirectory": "output"
+}

@@ -1,0 +1,14 @@
+MOM Lanjutan POC for NDR DAS
+- review traffic statistics
+- ⁠melihat number of alarms dlm 2 minggu yang ke trigger
+- ⁠macam2 risk yg muncul, bisa di filter berdasarkan risk dan attack status
+- ⁠intelligence event analysis utk tau web apa aja yg udh coba attack
+- ⁠CVE yang muncul di risk berdasarkan active traffic (failed attack attempts)
+- file threat analysis ada gambarnya di sandbox, mapping an nya juga ada
+- ⁠mining machine dns(????)
+- ⁠detector cuman satu, tp bisa kita install agent
+- ⁠memisahkan by asset atau detector (customize mereka blh liatnya asset apa aja)
+- ⁠Dashboard, Analysis, Risk, Assets, Reports, Detectors, Configuration, System
+- ⁠PCAP File analysis nanti dicoba/ dilempar
+- ⁠barang yg throughput 100gig blom ready karna masih versi chinese
+- ⁠feedback: cukup membantu
