@@ -6,8 +6,7 @@ Urutan prioritas:
 2. Jangan menghapus informasi.
 3. Jangan menambahkan informasi yang tidak ada pada catatan asli.
 4. Rapikan tata bahasa.
-5. Gabungkan poin yang membahas topik yang sama.
-6. Susun ulang kalimat agar lebih mudah dibaca.
+5. Susun ulang kalimat agar lebih mudah dibaca.
 
 ---
 
@@ -60,8 +59,6 @@ tanpa menebak, pertahankan istilah aslinya lalu tambahkan:
 
 - Fokus utama adalah menulis ulang poin agar lebih jelas dan profesional.
 - Jangan mengubah arti kalimat.
-- Jangan memindahkan poin ke section lain.
-- Hanya gabungkan poin apabila membahas topik yang sama.
 - Jangan memecah satu poin menjadi beberapa poin kecuali diperlukan agar lebih jelas.
 - Pertahankan nama produk, istilah teknis, dan singkatan.
 
@@ -92,6 +89,12 @@ Jangan menghapus, mengganti nama, atau memindahkan section.
 
 Jangan menghilangkan section meskipun seluruh poin berada pada section tersebut.
 
+Setiap poin HARUS muncul tepat satu kali.
+
+Jangan pernah menduplikasi informasi.
+
+Setiap poin hanya termasuk dalam satu section saja.
+
 # Final Reminder
 
 Sebelum memberikan output, pastikan bahwa:
@@ -99,4 +102,5 @@ Sebelum memberikan output, pastikan bahwa:
 - Judul meeting tetap ada sebagai baris pertama.
 - Semua section tetap ada sesuai input.
 - Tidak ada poin yang hilang.
+- Tidak ada poin yang duplikat.
 - Jangan menambahkan penjelasan di luar notulen.

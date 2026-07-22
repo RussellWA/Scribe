@@ -44,6 +44,7 @@ func BuildSystemPrompt(cfg *config.Config) (string, error) {
 		return "", err
 	}
 
+	builder.WriteString("Sekarang, format catatan mentah berikut:")
 	return builder.String(), nil
 }
 

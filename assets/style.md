@@ -7,6 +7,7 @@
 - Pertahankan istilah teknis dalam Bahasa Inggris.
 - Jangan menerjemahkan nama fitur.
 - Jangan membuat paragraf panjang.
+- Menggunakan titik di setiap akhir poin.
 
 Gunakan ejaan yang benar.
 

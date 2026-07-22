@@ -81,17 +81,26 @@ func main() {
 	aiStart := time.Now()
 
 	stream := false
+
+	// Comment this when deploying for mac
 	keepAlive := &api.Duration{Duration: 0} // immediately unload the model
 
 	options := map[string]interface{}{
-		"temperature": 0.2,
+		"temperature": 0.0,
+	}
+
+	// for model 8b
+	think := api.ThinkValue{
+		Value: false,
 	}
 
 	request := &api.GenerateRequest{
-		Model:     "qwen3:4b-instruct",
+		Model: "qwen3:8b",
+		// Model:     "qwen3:4b-instruct",
 		Prompt:    fullPrompt,
 		Stream:    &stream,
 		KeepAlive: keepAlive,
+		Think:     &think,
 		Options:   options,
 	}
 
@@ -107,7 +116,7 @@ func main() {
 	aiElapsed := time.Since(aiStart)
 
 	statistics := stats.Statistics{
-		Model:       "qwen3:4b-instruct",
+		Model:       "qwen3:8b",
 		Temperature: 0.2,
 		InputLines:  stats.CountLines(input),
 		OutputLines: stats.CountLines(finalOutput),
@@ -130,5 +139,6 @@ func main() {
 
 	fmt.Println("\n---------------------------")
 
-	fmt.Println("Generated system prompt:")
+	fmt.Println("Generated prompt:")
+	fmt.Println(fullPrompt)
 }

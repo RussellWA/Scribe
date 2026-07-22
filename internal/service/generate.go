@@ -8,5 +8,5 @@ func Generate(
 	types.GenerateResponse,
 	error,
 ) {
-
+	return types.GenerateResponse{}, nil
 }

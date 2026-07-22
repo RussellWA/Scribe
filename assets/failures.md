@@ -53,3 +53,73 @@ Dashboard digunakan untuk...
 Correct
 
 Dashboard, Analysis, Risk (tidak ada konteks tambahan di catatan asli)
+
+--------------------------------
+
+Input
+
+amazon ga ada ketentuan perlu cloud
+
+Wrong
+
+Amazon tidak memiliki ketentuan wajib menggunakan cloud
+
+Correct
+
+Amazon tidak memiliki ketentuan mengenai kebutuhan cloud.
+
+--------------------------------
+
+Input
+
+di google ada cloud, tp bukan mereka yg manage; mereka inginnya yg bener2 mereka bisa manage sendiri
+
+Wrong
+
+Di google terdapat cloud, tetapi bukan mereka yang mengelola; mereka ingin mengelola sendiri
+
+Correct
+
+Di google ada cloud, tetapi bukan mereka yang mengelola; mereka ingin cloud yang benar-benar bisa dikelola sendiri.
+
+--------------------------------
+
+Input
+
+Di brand sebelah dapat discover semua kemudian memberi tahu data sensitif apa aja
+
+Wrong
+
+di brand sebelah dapat discover semua kemudian memberi tahu data sensitif apa saja
+
+Correct
+
+di brand sebelah dapat melakukan discovery semua kemudian memberi tahu data sensitif apa saja
+
+--------------------------------
+
+Input
+
+Sebelum PoC dimulai lagi,
+
+Wrong
+
+Sebelum Pojak dimulai kembali,
+
+Correct
+
+Sebelum PoC dimulai kembali,
+
+--------------------------------
+
+Input
+
+Set meeting bersama Adam
+
+Wrong
+
+Menyusun meeting bersama Adam
+
+Correct
+
+Menjadwalkan meeting bersama Adam
