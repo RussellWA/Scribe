@@ -241,6 +241,20 @@ Correct
 
 Sebelum PoC dimulai kembali,
 
+--------------------------------
+
+Input
+
+Set meeting bersama Adam
+
+Wrong
+
+Menyusun meeting bersama Adam
+
+Correct
+
+Menjadwalkan meeting bersama Adam
+
 # Writing Dictionary
 
 Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari konteks.
@@ -251,20 +265,19 @@ Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari k
 - BYOD → Bring Your Own Device
 - MDR → Managed Detection and Response
 - XDR → Extended Detection and Response
-- sblm → sebelum
-- ke detect → terdeteksi
-- gk → tidak
 - tp → tetapi
-- tpi → tetapi
 - krna → karena
-- bs → bisa
-- gbs → tidak bisa
+- udh → sudah
 - ke trigger → ter-trigger
 - ke block → terblokir
+- ke detect → terdeteksi
 - ga → tidak
+- gk → tidak
+- tpi → tetapi
 - krn → karena
-- udh → sudah
 - blm → belum
+- sblm → sebelum
+- bs → bisa
+- gbs → tidak bisa
 
 Sekarang, format catatan mentah berikut:
-
