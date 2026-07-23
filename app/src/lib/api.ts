@@ -1,6 +1,10 @@
-export async function generateMinutes(title: string, notes: string) {
+export async function generateMinutes(
+  request: GenerateRequest
+): Promise<GenerateResponse> {
+  await new Promise((r) => setTimeout(r, 2000));
+
   return {
-    output: '...',
+    output: 'Mock output',
     elapsed: 2.1,
   };
 }

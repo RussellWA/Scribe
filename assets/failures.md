@@ -123,3 +123,18 @@ Menyusun meeting bersama Adam
 Correct
 
 Menjadwalkan meeting bersama Adam
+
+--------------------------------
+
+Input
+
+jd harus antivirus dl yg perlu diinstal
+
+Wrong
+
+jadi harus antivirus dl yang perlu diinstal
+
+Correct
+
+jadi harus meng-install antivirus terlebih dahulu
+

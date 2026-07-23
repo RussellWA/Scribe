@@ -255,29 +255,46 @@ Correct
 
 Menjadwalkan meeting bersama Adam
 
+--------------------------------
+
+Input
+
+jd harus antivirus dl yg perlu diinstal
+
+Wrong
+
+jadi harus antivirus dl yang perlu diinstal
+
+Correct
+
+jadi harus meng-install antivirus terlebih dahulu
+
 # Writing Dictionary
 
 Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari konteks.
 
-- POC → Proof of Concept
+- PoC → Proof of Concept
 - EDR → Endpoint Detection and Response
 - DLP → Data Loss Prevention
 - BYOD → Bring Your Own Device
 - MDR → Managed Detection and Response
 - XDR → Extended Detection and Response
-- tp → tetapi
-- krna → karena
-- udh → sudah
-- ke trigger → ter-trigger
-- ke block → terblokir
-- ke detect → terdeteksi
-- ga → tidak
-- gk → tidak
+- POC → Proof of Concept
 - tpi → tetapi
 - krn → karena
-- blm → belum
+- dl → terlebih dahulu
+- ke block → terblokir
 - sblm → sebelum
 - bs → bisa
+- ttg → tentang
+- ke detect → terdeteksi
+- gk → tidak
+- ke trigger → ter-trigger
+- ga → tidak
+- krna → karena
+- udh → sudah
+- blm → belum
 - gbs → tidak bisa
+- tp → tetapi
 
 Sekarang, format catatan mentah berikut:

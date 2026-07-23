@@ -12,7 +12,12 @@ import { copyOutput } from '../utils/copy';
 import { useKeyboardShortcut } from '../hooks/useKeyboardShortcut';
 import { useGenerate } from '../hooks/useGenerate';
 
-export default function Home() {
+interface HomeProps {
+  openGlossary: () => void;
+  openNormalization: () => void;
+}
+
+export default function Home({ openGlossary, openNormalization }: HomeProps) {
   const [title, setTitle] = useState('');
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -62,7 +67,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100">
       <div className="mx-auto flex max-w-[1600px] flex-col gap-6 p-6 lg:p-8">
-        <Header />
+        <Header
+          openGlossary={openGlossary}
+          openNormalization={openNormalization}
+        />
 
         <div className="flex w-full items-stretch gap-6">
           <div className="flex-1 space-y-4">
