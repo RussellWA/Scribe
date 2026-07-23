@@ -18,6 +18,15 @@ import (
 )
 
 func main() {
+	app := NewApp()
+
+	dict, err := app.GetNormalization()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(dict)
+
 	if len(os.Args) < 2 {
 		log.Fatal("Usage: go run . <input-file>")
 	}
@@ -86,7 +95,7 @@ func main() {
 	keepAlive := &api.Duration{Duration: 0} // immediately unload the model
 
 	options := map[string]interface{}{
-		"temperature": 0.0,
+		"temperature": 0.1,
 	}
 
 	// for model 8b
@@ -136,8 +145,6 @@ func main() {
 	if err != nil {
 		log.Fatal("Failed to save output file:", err)
 	}
-
-	fmt.Println("\n---------------------------")
 
 	fmt.Println("Generated prompt:")
 	fmt.Println(fullPrompt)

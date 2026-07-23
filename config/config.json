@@ -5,8 +5,8 @@
         "assets/style.md",
         "assets/failures.md"
     ],
-    "normalization": "assets/normalization.json",
-    "glossary": "assets/glossary.json",
+    "normalization": "data/normalization.json",
+    "glossary": "data/glossary.json",
     "generatedPrompt": "generated/system_prompt.md",
     "inputDirectory": "input",
     "outputDirectory": "output"

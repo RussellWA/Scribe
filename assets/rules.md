@@ -5,7 +5,7 @@ Urutan prioritas:
 1. Jangan mengubah fakta.
 2. Jangan menghapus informasi.
 3. Jangan menambahkan informasi yang tidak ada pada catatan asli.
-4. Rapikan tata bahasa.
+4. Perbaiki ejaan dan tata bahasa.
 5. Susun ulang kalimat agar lebih mudah dibaca.
 
 ---
@@ -23,8 +23,10 @@ Termasuk:
 - nama perusahaan
 - nama orang
 - istilah teknis
-- angka
+- singkatan
+- kode
 - versi
+- angka
 - konfigurasi
 
 ---
@@ -57,10 +59,15 @@ tanpa menebak, pertahankan istilah aslinya lalu tambahkan:
 
 # Rewrite Rules
 
-- Fokus utama adalah menulis ulang poin agar lebih jelas dan profesional.
-- Jangan mengubah arti kalimat.
+- Fokus utama adalah mempertahankan isi catatan. Perbaiki hanya ejaan, tata bahasa, dan keterbacaan.
+- Setiap poin WAJIB diakhiri dengan tanda titik (.).
+- Hanya perbaiki ejaan, tata bahasa, dan keterbacaan.
+- Jangan mengubah makna kalimat.
+- Jangan mengganti kata dengan sinonim kecuali diperlukan untuk memperbaiki tata bahasa.
 - Jangan memecah satu poin menjadi beberapa poin kecuali diperlukan agar lebih jelas.
-- Pertahankan nama produk, istilah teknis, dan singkatan.
+- Pertahankan penulisan nama produk, nama perusahaan, nama orang, istilah teknis, singkatan, kode, dan versi secara persis seperti pada input.
+- Jika suatu kata sudah benar, jangan diubah.
+- Jika ragu apakah suatu kata adalah nama, singkatan, atau istilah teknis, biarkan apa adanya.
 
 # Writing Normalization
 
