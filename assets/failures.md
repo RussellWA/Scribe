@@ -151,3 +151,18 @@ supportnya ada di live chat dan forum2
 Correct
 
 supportnya ada di live chat dan forum-forum
+
+--------------------------------
+
+Input
+
+current vendor mereka
+
+Wrong
+
+Vendor saat ini mereka
+
+Correct
+
+Vendor mereka saat ini
+

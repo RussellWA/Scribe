@@ -298,31 +298,31 @@ supportnya ada di live chat dan forum-forum
 
 Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari konteks.
 
+- POC → Proof of Concept
 - EDR → Endpoint Detection and Response
 - DLP → Data Loss Prevention
 - BYOD → Bring Your Own Device
 - MDR → Managed Detection and Response
 - XDR → Extended Detection and Response
-- POC → Proof of Concept
-- gk → tidak
-- tpi → tetapi
-- krn → karena
-- sblm → sebelum
-- ke block → terblokir
-- krna → karena
-- sdh → sudah
-- blm → belum
-- gbs → tidak bisa
-- tgg → tunggu
-- kl → kalau
-- udh → udah
-- bs → bisa
-- ttg → tentang
 - ke trigger → ter-trigger
-- ga → tidak
+- ke block → terblokir
+- gk → tidak
 - tp → tetapi
-- dl → terlebih dahulu
+- bs → bisa
 - dll → dan lain-lain
 - ke detect → terdeteksi
+- krna → karena
+- sdh → sudah
+- ga → tidak
+- krn → karena
+- udh → udah
+- blm → belum
+- gbs → tidak bisa
+- dl → terlebih dahulu
+- tgg → tunggu
+- tpi → tetapi
+- sblm → sebelum
+- ttg → tentang
+- kl → kalau
 
 Sekarang, format catatan mentah berikut:

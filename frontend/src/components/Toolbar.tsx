@@ -1,11 +1,10 @@
 import {
-  Sparkles,
+  BrushCleaning,
   Copy,
   Download,
-  BrushCleaning,
   LoaderCircle,
+  Sparkles,
 } from 'lucide-react';
-import { useEffect } from 'react';
 
 interface ToolbarProps {
   loading: boolean;
@@ -13,8 +12,8 @@ interface ToolbarProps {
   canCopySave: boolean;
   canClear: boolean;
   onGenerate: () => void;
-  onCopy: (output: string) => void;
-  onSave: (title: string, output: string) => void;
+  onCopy: () => void;
+  onSave: () => void;
   onClear: () => void;
 }
 

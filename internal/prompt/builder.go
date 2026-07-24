@@ -1,10 +1,10 @@
 package prompt
 
 import (
+	"Scribe/config"
 	"encoding/json"
 	"fmt"
 	"os"
-	"scribe/config"
 	"strings"
 )
 

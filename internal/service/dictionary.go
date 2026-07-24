@@ -1,9 +1,9 @@
 package service
 
 import (
+	"Scribe/internal/model"
 	"encoding/json"
 	"os"
-	"scribe/internal/model"
 )
 
 const (

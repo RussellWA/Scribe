@@ -1,4 +1,3 @@
-import FileText from 'lucide-react/dist/esm/icons/file-text';
 import SettingsMenu from './SettingsMenu';
 
 interface HeaderProps {

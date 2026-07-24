@@ -1,6 +1,6 @@
-import type { SessionStats } from '../types/Statistics';
+import type { SessionStat } from '../types/Statistics';
 
-export function calculateStats(input: string): SessionStats {
+export function calculateStats(input: string): SessionStat {
   const characters = input.length;
 
   const words = input.trim() === '' ? 0 : input.trim().split(/\s+/).length;

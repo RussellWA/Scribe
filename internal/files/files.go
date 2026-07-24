@@ -1,9 +1,9 @@
 package files
 
 import (
+	"Scribe/config"
 	"os"
 	"path/filepath"
-	"scribe/config"
 )
 
 func ReadInput(cfg *config.Config, filename string) (string, error) {

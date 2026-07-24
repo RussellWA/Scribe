@@ -5,23 +5,15 @@ import (
 	"strings"
 )
 
-func Parse(input string) (*MeetingInput, error) {
+func Parse(input string, title string) (*MeetingInput, error) {
 	meeting := &MeetingInput{}
 
 	lines := strings.Split(input, "\n")
-
-	foundTitle := false
 
 	for _, line := range lines {
 		line = strings.TrimSpace(line)
 
 		if line == "" {
-			continue
-		}
-
-		if !foundTitle {
-			meeting.Title = line
-			foundTitle = true
 			continue
 		}
 
@@ -47,10 +39,6 @@ func Parse(input string) (*MeetingInput, error) {
 		default:
 			return nil, fmt.Errorf("unknown marker: %s", line)
 		}
-	}
-
-	if meeting.Title == "" {
-		return nil, fmt.Errorf("meeting title is missing")
 	}
 
 	return meeting, nil

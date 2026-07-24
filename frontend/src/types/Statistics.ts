@@ -1,4 +1,4 @@
-export interface SessionStats {
+export interface SessionStat {
   characters: number;
   words: number;
   lines: number;
