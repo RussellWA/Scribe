@@ -28,10 +28,4 @@ Wails
 
 ## Architecture
 
-React
-↓
-Wails
-↓
-Go
-↓
-Ollama
+React -> Wails -> Go -> Ollama
