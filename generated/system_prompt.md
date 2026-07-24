@@ -280,32 +280,49 @@ Correct
 
 jadi harus meng-install antivirus terlebih dahulu
 
+--------------------------------
+
+Input
+
+supportnya ada di live chat dan forum2
+
+Wrong
+
+supportnya ada di live chat dan forum2
+
+Correct
+
+supportnya ada di live chat dan forum-forum
+
 # Writing Dictionary
 
 Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari konteks.
 
-- POC → Proof of Concept
 - EDR → Endpoint Detection and Response
 - DLP → Data Loss Prevention
 - BYOD → Bring Your Own Device
 - MDR → Managed Detection and Response
 - XDR → Extended Detection and Response
-- ke trigger → ter-trigger
-- ke block → terblokir
-- ke detect → terdeteksi
-- tp → tetapi
-- dl → terlebih dahulu
-- ga → tidak
-- udh → sudah
-- blm → belum
-- sblm → sebelum
-- bs → bisa
+- POC → Proof of Concept
+- gk → tidak
 - tpi → tetapi
 - krn → karena
-- ttg → tentang
-- tgg → tunggu
-- gk → tidak
+- sblm → sebelum
+- ke block → terblokir
 - krna → karena
+- sdh → sudah
+- blm → belum
 - gbs → tidak bisa
+- tgg → tunggu
+- kl → kalau
+- udh → udah
+- bs → bisa
+- ttg → tentang
+- ke trigger → ter-trigger
+- ga → tidak
+- tp → tetapi
+- dl → terlebih dahulu
+- dll → dan lain-lain
+- ke detect → terdeteksi
 
 Sekarang, format catatan mentah berikut:

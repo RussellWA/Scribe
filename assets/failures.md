@@ -138,3 +138,16 @@ Correct
 
 jadi harus meng-install antivirus terlebih dahulu
 
+--------------------------------
+
+Input
+
+supportnya ada di live chat dan forum2
+
+Wrong
+
+supportnya ada di live chat dan forum2
+
+Correct
+
+supportnya ada di live chat dan forum-forum

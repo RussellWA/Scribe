@@ -5,7 +5,8 @@
     "tpi": "tetapi",
     "krn": "karena",
     "krna": "karena",
-    "udh": "sudah",
+    "udh": "udah",
+    "sdh": "sudah",
     "blm": "belum",
     "sblm": "sebelum",
     "bs": "bisa",
@@ -13,6 +14,8 @@
     "dl": "terlebih dahulu",
     "ttg": "tentang",
     "tgg": "tunggu",
+    "kl": "kalau",
+    "dll": "dan lain-lain",
 
     "ke trigger": "ter-trigger",
     "ke block": "terblokir",

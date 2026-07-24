@@ -146,6 +146,6 @@ func main() {
 		log.Fatal("Failed to save output file:", err)
 	}
 
-	fmt.Println("Generated prompt:")
-	fmt.Println(fullPrompt)
+	// fmt.Println("Generated prompt:")
+	// fmt.Println(fullPrompt)
 }
