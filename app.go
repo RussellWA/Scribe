@@ -2,7 +2,6 @@ package main
 
 import (
 	"Scribe/config"
-	"Scribe/internal/model"
 	"Scribe/internal/service"
 	"Scribe/internal/types"
 	"context"
@@ -35,18 +34,10 @@ func (a *App) Generate(req types.GenerateRequest) (types.GenerateResponse, error
 	return service.Generate(req)
 }
 
-func (a *App) GetNormalization() (model.Dictionary, error) {
-	return service.LoadNormalization()
-}
-
-func (a *App) SaveNormalization(dict model.Dictionary) error {
-	return service.SaveNormalization(dict)
-}
-
-func (a *App) GetGlossary() (model.Dictionary, error) {
+func (a *App) GetGlossary() (map[string]string, error) {
 	return service.LoadGlossary()
 }
 
-func (a *App) SaveGlossary(dict model.Dictionary) error {
+func (a *App) SaveGlossary(dict map[string]string) error {
 	return service.SaveGlossary(dict)
 }

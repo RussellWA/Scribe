@@ -10,18 +10,10 @@ export function GetGlossary() {
   return window['go']['main']['App']['GetGlossary']();
 }
 
-export function GetNormalization() {
-  return window['go']['main']['App']['GetNormalization']();
-}
-
 export function Greet(arg1) {
   return window['go']['main']['App']['Greet'](arg1);
 }
 
 export function SaveGlossary(arg1) {
   return window['go']['main']['App']['SaveGlossary'](arg1);
-}
-
-export function SaveNormalization(arg1) {
-  return window['go']['main']['App']['SaveNormalization'](arg1);
 }

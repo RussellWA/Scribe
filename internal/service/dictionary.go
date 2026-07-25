@@ -1,7 +1,6 @@
 package service
 
 import (
-	"Scribe/internal/model"
 	"encoding/json"
 	"os"
 )
@@ -11,13 +10,13 @@ const (
 	glossaryPath      = "data/glossary.json"
 )
 
-func loadDictionary(path string) (model.Dictionary, error) {
+func loadDictionary(path string) (map[string]string, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
 
-	var dictionary model.Dictionary
+	var dictionary map[string]string
 
 	err = json.Unmarshal(data, &dictionary)
 	if err != nil {
@@ -27,7 +26,7 @@ func loadDictionary(path string) (model.Dictionary, error) {
 	return dictionary, nil
 }
 
-func saveDictionary(path string, dictionary model.Dictionary) error {
+func saveDictionary(path string, dictionary map[string]string) error {
 	data, err := json.MarshalIndent(dictionary, "", "    ")
 	if err != nil {
 		return err
@@ -36,18 +35,18 @@ func saveDictionary(path string, dictionary model.Dictionary) error {
 	return os.WriteFile(path, data, 0644)
 }
 
-func LoadNormalization() (model.Dictionary, error) {
+func LoadNormalization() (map[string]string, error) {
 	return loadDictionary(normalizationPath)
 }
 
-func SaveNormalization(dictionary model.Dictionary) error {
+func SaveNormalization(dictionary map[string]string) error {
 	return saveDictionary(normalizationPath, dictionary)
 }
 
-func LoadGlossary() (model.Dictionary, error) {
+func LoadGlossary() (map[string]string, error) {
 	return loadDictionary(glossaryPath)
 }
 
-func SaveGlossary(dictionary model.Dictionary) error {
+func SaveGlossary(dictionary map[string]string) error {
 	return saveDictionary(glossaryPath, dictionary)
 }
