@@ -1,29 +1,28 @@
 import { useEffect, useState } from 'react';
-import DictionaryDialog, { type DictionaryEntry } from './DictionaryDialog';
 import ConfirmDialog from './ConfirmDialog';
+import ThreeColumnDialog, { type ThreeColumnEntry } from './ThreeColumnDialog';
 
-interface DictionaryManagerProps {
+// The new shape of your data
+type ThreeColumnData = Record<string, { wrong: string; right: string }>;
+
+interface ThreeColumnManagerProps {
     title: string;
-    keyLabel: string;
-    valueLabel: string;
-    fetchData: () => Promise<Record<string, string> | void | null>;
-    saveData: (data: Record<string, string>) => Promise<void>;
+    fetchData: () => Promise<ThreeColumnData | void | null>;
+    saveData: (data: ThreeColumnData) => Promise<void>;
     onBack: () => void;
 }
 
-export default function DictionaryManager({
+export default function ThreeColumnManager({
     title,
-    keyLabel,
-    valueLabel,
     fetchData,
     saveData,
     onBack,
-}: DictionaryManagerProps) {
+}: ThreeColumnManagerProps) {
     const [search, setSearch] = useState('');
-    const [editing, setEditing] = useState<DictionaryEntry | null>(null);
+    const [editing, setEditing] = useState<ThreeColumnEntry | null>(null);
     const [openDialog, setOpenDialog] = useState(false);
-    const [dictionary, setDictionary] = useState<Record<string, string> | null>(null);
     const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+    const [dictionary, setDictionary] = useState<ThreeColumnData | null>(null);
 
     useEffect(() => {
         async function load() {
@@ -42,21 +41,21 @@ export default function DictionaryManager({
               const keyword = search.toLowerCase();
               return (
                   k.toLowerCase().includes(keyword) ||
-                  v.toLowerCase().includes(keyword)
+                  v.wrong.toLowerCase().includes(keyword) ||
+                  v.right.toLowerCase().includes(keyword)
               );
           })
         : [];
 
-    const handleDialogSave = async (originalKey: string | null, newKey: string, newValue: string) => {
+    const handleDialogSave = async (originalKey: string | null, newKey: string, newWrong: string, newRight: string) => {
         if (!dictionary) return;
         const newDictionary = { ...dictionary };
 
-        // If editing and the key changed, remove the old key
         if (originalKey && originalKey !== newKey) {
             delete newDictionary[originalKey];
         }
 
-        newDictionary[newKey] = newValue;
+        newDictionary[newKey] = { wrong: newWrong, right: newRight };
 
         setDictionary(newDictionary);
         setOpenDialog(false);
@@ -67,7 +66,6 @@ export default function DictionaryManager({
 
     const handleDelete = async (keyToDelete: string) => {
         if (!dictionary) return;
-
         const newDictionary = { ...dictionary };
         delete newDictionary[keyToDelete];
 
@@ -77,7 +75,7 @@ export default function DictionaryManager({
 
     return (
         <main className="min-h-screen bg-zinc-950 text-white">
-            <div className="mx-auto max-w-3xl p-8">
+            <div className="mx-auto max-w-7xl p-8">
                 <div className="relative mb-8 flex items-center">
                     <button
                         onClick={onBack}
@@ -85,7 +83,6 @@ export default function DictionaryManager({
                     >
                         ← Back
                     </button>
-
                     <h1 className="absolute left-1/2 -translate-x-1/2 text-3xl font-bold">
                         {title}
                     </h1>
@@ -99,7 +96,6 @@ export default function DictionaryManager({
                             placeholder="Search..."
                             className="flex-1 border border-zinc-600/50 bg-zinc-800 rounded-lg px-3 outline-none focus:border-zinc-500"
                         />
-
                         <button
                             onClick={() => {
                                 setEditing(null);
@@ -111,34 +107,44 @@ export default function DictionaryManager({
                         </button>
                     </div>
 
-                    <div className="space-y-2">
-                        <div className="grid grid-cols-[150px_1fr_120px] rounded-lg bg-zinc-800 p-3 font-semibold">
-                            <div>{keyLabel}</div>
-                            <div>{valueLabel}</div>
-                            <div>Actions</div>
+                    <div className="space-y-3">
+                        <div className="grid grid-cols-[repeat(3,1fr)_100px] rounded-lg bg-zinc-800 p-3 font-semibold gap-4">
+                            <div>Input</div>
+                            <div>Wrong</div>
+                            <div>Correct</div>
+                            <div className="text-right pr-2">Actions</div>
                         </div>
 
                         {filteredDictionary.map(([k, v]) => (
                             <div
                                 key={k}
-                                className="grid grid-cols-[150px_1fr_120px] items-center rounded-lg border border-zinc-800 p-3"
+                                className="grid grid-cols-[repeat(3,1fr)_100px] items-start rounded-lg border border-zinc-800 p-4 gap-6"
                             >
-                                <div className="font-mono">{k}</div>
-                                <div>{v}</div>
-                                <div className="flex gap-4">
+                                <div className="font-mono text-sm wrap-break-word whitespace-pre-wrap">{k}</div>
+                            
+                                <div className="text-red-400 wrap-break-word whitespace-pre-wrap">
+                                    {v.wrong}
+                                </div>
+                                
+                                <div className="text-green-400 wrap-break-word whitespace-pre-wrap">
+                                    {v.right}
+                                </div>
+
+                                <div className="flex justify-end gap-4 pt-1">
                                     <button
                                         onClick={() => {
-                                            setEditing({ key: k, value: v });
+                                            setEditing({ key: k, wrong: v.wrong, right: v.right });
                                             setOpenDialog(true);
                                         }}
                                         className="hover:text-yellow-400 transition-colors"
+                                        title="Edit Entry"
                                     >
                                         ✏️
                                     </button>
-
                                     <button
                                         onClick={() => setDeleteTarget(k)}
                                         className="hover:text-red-400 transition-colors"
+                                        title="Delete Entry"
                                     >
                                         🗑️
                                     </button>
@@ -149,11 +155,9 @@ export default function DictionaryManager({
                 </div>
             </div>
 
-            <DictionaryDialog
+            <ThreeColumnDialog
                 open={openDialog}
                 entry={editing}
-                keyLabel={keyLabel}
-                valueLabel={valueLabel}
                 onClose={() => {
                     setOpenDialog(false);
                     setEditing(null);

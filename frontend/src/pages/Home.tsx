@@ -17,9 +17,10 @@ import { calculateStats } from '../utils/statistics';
 interface HomeProps {
     openGlossary: () => void;
     openNormalization: () => void;
+    openFailure: () => void;
 }
 
-export default function Home({ openGlossary, openNormalization }: HomeProps) {
+export default function Home({ openGlossary, openNormalization, openFailure }: HomeProps) {
     const [title, setTitle] = useState('');
     const [input, setInput] = useState('');
     const [output, setOutput] = useState('');
@@ -87,6 +88,7 @@ export default function Home({ openGlossary, openNormalization }: HomeProps) {
                 <Header
                     openGlossary={openGlossary}
                     openNormalization={openNormalization}
+                    openFailure={openFailure}
                 />
 
                 <div className="flex w-full items-stretch gap-6">

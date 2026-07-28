@@ -3,11 +3,13 @@ import SettingsMenu from './SettingsMenu';
 interface HeaderProps {
   openGlossary: () => void;
   openNormalization: () => void;
+  openFailure: () => void;
 }
 
 export default function Header({
   openGlossary,
   openNormalization,
+  openFailure,
 }: HeaderProps) {
   return (
     <header className="flex items-start justify-between gap-4">
@@ -21,6 +23,7 @@ export default function Header({
       <SettingsMenu
         openGlossary={openGlossary}
         openNormalization={openNormalization}
+        openFailure={openFailure}
       />
     </header>
   );

@@ -24,10 +24,13 @@ export function useKeyboardShortcut(
                 return;
             }
 
+            // Treat Ctrl (Windows/Linux) and Cmd (macOS) as the same modifier
+            const isCmdOrCtrl = event.ctrlKey || event.metaKey;
+
             // Check shortcut
             if (
                 event.key.toLowerCase() !== key.toLowerCase() ||
-                !!options.ctrl !== event.ctrlKey ||
+                !!options.ctrl !== isCmdOrCtrl ||
                 !!options.shift !== event.shiftKey ||
                 !!options.alt !== event.altKey
             ) {
@@ -43,5 +46,5 @@ export function useKeyboardShortcut(
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [key, callback, options.ctrl, options.shift, options.alt]);
+    }, [key, callback, options.ctrl, options.shift, options.alt, options.allowWhileTyping]);
 }

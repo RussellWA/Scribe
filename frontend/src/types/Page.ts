@@ -1,1 +1,1 @@
-export type Page = 'home' | 'glossary' | 'normalization';
+export type Page = 'home' | 'glossary' | 'normalization' | 'failure';

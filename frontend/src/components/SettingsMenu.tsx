@@ -4,11 +4,13 @@ import { BookOpen, Languages, Settings } from 'lucide-react';
 interface SettingsMenuProps {
   openGlossary: () => void;
   openNormalization: () => void;
+  openFailure: () => void;
 }
 
 export default function SettingsMenu({
   openGlossary,
   openNormalization,
+  openFailure,
 }: SettingsMenuProps) {
   const [open, setOpen] = useState(false);
 
@@ -58,6 +60,17 @@ export default function SettingsMenu({
           >
             <Languages size={18} />
             Normalization
+          </button>
+
+          <button
+            onClick={() => {
+              setOpen(false);
+              openFailure();
+            }}
+            className="flex w-full items-center gap-3 px-4 py-3 transition hover:bg-zinc-800"
+          >
+            <Languages size={18} />
+            Failure
           </button>
         </div>
       )}

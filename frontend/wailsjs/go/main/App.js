@@ -6,6 +6,10 @@ export function Generate(arg1) {
   return window['go']['main']['App']['Generate'](arg1);
 }
 
+export function GetFailure() {
+  return window['go']['main']['App']['GetFailure']();
+}
+
 export function GetGlossary() {
   return window['go']['main']['App']['GetGlossary']();
 }
@@ -16,6 +20,10 @@ export function GetNormalization() {
 
 export function Greet(arg1) {
   return window['go']['main']['App']['Greet'](arg1);
+}
+
+export function SaveFailure(arg1) {
+  return window['go']['main']['App']['SaveFailure'](arg1);
 }
 
 export function SaveGlossary(arg1) {

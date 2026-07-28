@@ -1,4 +1,4 @@
-import { Generate, GetGlossary, GetNormalization, SaveGlossary, SaveNormalization } from "../../wailsjs/go/main/App";
+import { Generate, GetFailure, GetGlossary, GetNormalization, SaveFailure, SaveGlossary, SaveNormalization } from "../../wailsjs/go/main/App";
 import { types } from "../../wailsjs/go/models";
 
 export async function generateMinutes(
@@ -21,4 +21,12 @@ export async function getNormalization(): Promise<Record<string, string>> {
 
 export async function saveNormalization(normalization: Record<string, string>): Promise<void> {
   await SaveNormalization(normalization);
+}
+
+export async function getFailure(): Promise<Record<string, { wrong: string; right: string }>> {
+  return await GetFailure();
+}
+
+export async function saveFailure(failure: Record<string, { wrong: string; right: string }>): Promise<void> {
+  await SaveFailure(failure);
 }

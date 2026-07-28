@@ -49,3 +49,11 @@ func (a *App) GetNormalization() (map[string]string, error) {
 func (a *App) SaveNormalization(dict map[string]string) error {
 	return service.SaveNormalization(dict)
 }
+
+func (a *App) GetFailure() (map[string]service.FailureEntry, error) {
+	return service.LoadFailure()
+}
+
+func (a *App) SaveFailure(dict map[string]service.FailureEntry) error {
+	return service.SaveFailure(dict)
+}
