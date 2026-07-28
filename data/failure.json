@@ -1,27 +1,7 @@
 {
-  "alarm ke trigger": {
-    "wrong": "Alarm ditemukan.",
-    "right": "Alarm ter-trigger."
-  },
-  "ke block": {
-    "wrong": "Diblok.",
-    "right": "Terblokir."
-  },
-  "feedback: cukup membantu": {
-    "wrong": "(dihapus)",
-    "right": "Feedback dari peserta: cukup membantu."
-  },
   "Dashboard, Analysis, Risk": {
     "wrong": "Dashboard digunakan untuk...",
     "right": "Dashboard, Analysis, Risk (tidak ada konteks tambahan di catatan asli)"
-  },
-  "amazon ga ada ketentuan perlu cloud": {
-    "wrong": "Amazon tidak memiliki ketentuan wajib menggunakan cloud",
-    "right": "Amazon tidak memiliki ketentuan mengenai kebutuhan cloud."
-  },
-  "di google ada cloud, tp bukan mereka yg manage; mereka inginnya yg bener2 mereka bisa manage sendiri": {
-    "wrong": "Di google terdapat cloud, tetapi bukan mereka yang mengelola; mereka ingin mengelola sendiri",
-    "right": "Di google ada cloud, tetapi bukan mereka yang mengelola; mereka ingin cloud yang benar-benar bisa dikelola sendiri."
   },
   "Di brand sebelah dapat discover semua kemudian memberi tahu data sensitif apa aja": {
     "wrong": "di brand sebelah dapat discover semua kemudian memberi tahu data sensitif apa saja",
@@ -35,16 +15,36 @@
     "wrong": "Menyusun meeting bersama Adam",
     "right": "Menjadwalkan meeting bersama Adam"
   },
-  "jd harus antivirus dl yg perlu diinstal": {
-    "wrong": "jadi harus antivirus dl yang perlu diinstal",
-    "right": "jadi harus meng-install antivirus terlebih dahulu"
+  "alarm ke trigger": {
+    "wrong": "Alarm ditemukan.",
+    "right": "Alarm ter-trigger."
   },
-  "supportnya ada di live chat dan forum2": {
-    "wrong": "supportnya ada di live chat dan forum2",
-    "right": "supportnya ada di live chat dan forum-forum"
+  "amazon ga ada ketentuan perlu cloud": {
+    "wrong": "Amazon tidak memiliki ketentuan wajib menggunakan cloud",
+    "right": "Amazon tidak memiliki ketentuan mengenai kebutuhan cloud."
   },
   "current vendor mereka": {
     "wrong": "Vendor saat ini mereka",
     "right": "Vendor mereka saat ini"
+  },
+  "di google ada cloud, tp bukan mereka yg manage; mereka inginnya yg bener2 mereka bisa manage sendiri": {
+    "wrong": "Di google terdapat cloud, tetapi bukan mereka yang mengelola; mereka ingin mengelola sendiri",
+    "right": "Di google ada cloud, tetapi bukan mereka yang mengelola; mereka ingin cloud yang benar-benar bisa dikelola sendiri."
+  },
+  "feedback: cukup membantu": {
+    "wrong": "(dihapus)",
+    "right": "Feedback dari peserta: cukup membantu."
+  },
+  "jd harus antivirus dl yg perlu diinstal": {
+    "wrong": "jadi harus antivirus dl yang perlu diinstal",
+    "right": "jadi harus meng-install antivirus terlebih dahulu"
+  },
+  "ke block": {
+    "wrong": "Diblok.",
+    "right": "Terblokir."
+  },
+  "supportnya ada di live chat dan forum2": {
+    "wrong": "supportnya ada di live chat dan forum2",
+    "right": "supportnya ada di live chat dan forum-forum"
   }
 }
