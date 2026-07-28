@@ -1,7 +1,7 @@
 export interface SessionStat {
-  characters: number;
+  // characters: number;
   words: number;
-  lines: number;
+  // lines: number;
 
   meetingNotes: number;
   confirmations: number;

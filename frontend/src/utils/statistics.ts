@@ -1,11 +1,11 @@
 import type { SessionStat } from '../types/Statistics';
 
 export function calculateStats(input: string): SessionStat {
-  const characters = input.length;
+  // const characters = input.length;
 
   const words = input.trim() === '' ? 0 : input.trim().split(/\s+/).length;
 
-  const lines = input === '' ? 0 : input.split('\n').length;
+  // const lines = input === '' ? 0 : input.split('\n').length;
 
   const meetingNotes = input.match(/^\s*-/gm)?.length ?? 0;
 
@@ -22,9 +22,9 @@ export function calculateStats(input: string): SessionStat {
   }).length;
 
   return {
-    characters,
+    // characters,
     words,
-    lines,
+    // lines,
 
     meetingNotes,
     confirmations,

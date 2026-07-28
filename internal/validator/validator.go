@@ -8,17 +8,10 @@ import (
 func ValidateInput(input string) error {
 	lines := strings.Split(input, "\n")
 
-	foundTitle := false
-
 	for i, line := range lines {
 		line = strings.TrimSpace(line)
 
 		if line == "" {
-			continue
-		}
-
-		if !foundTitle {
-			foundTitle = true
 			continue
 		}
 
@@ -32,10 +25,6 @@ func ValidateInput(input string) error {
 				line,
 			)
 		}
-	}
-
-	if !foundTitle {
-		return fmt.Errorf("Meeting title is missing")
 	}
 
 	return nil

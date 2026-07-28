@@ -20,7 +20,14 @@ func Generate(
 	types.GenerateResponse,
 	error,
 ) {
-	fmt.Println("req:", req)
+	if req.Title == "" {
+		return types.GenerateResponse{}, fmt.Errorf("Meeting title is missing")
+	}
+
+	if req.Notes == "" {
+		return types.GenerateResponse{}, fmt.Errorf("Meeting notes areas missing")
+	}
+
 	cfg, err := config.LoadConfig("config/config.json")
 	if err != nil {
 		panic(err)

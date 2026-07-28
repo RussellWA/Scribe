@@ -294,35 +294,50 @@ Correct
 
 supportnya ada di live chat dan forum-forum
 
+--------------------------------
+
+Input
+
+current vendor mereka
+
+Wrong
+
+Vendor saat ini mereka
+
+Correct
+
+Vendor mereka saat ini
+
 # Writing Dictionary
 
 Gunakan daftar berikut sebagai referensi penulisan apabila maknanya jelas dari konteks.
 
-- POC → Proof of Concept
-- EDR → Endpoint Detection and Response
-- DLP → Data Loss Prevention
-- BYOD → Bring Your Own Device
 - MDR → Managed Detection and Response
+- POC → Proof of Concept
 - XDR → Extended Detection and Response
-- ke trigger → ter-trigger
+- BYOD → Bring Your Own Device
+- DLP → Data Loss Prevention
+- EDR → Endpoint Detection and Response
+- kl → kalau
+- sblm → sebelum
+- ttd → tanda tangan
 - ke block → terblokir
-- gk → tidak
 - tp → tetapi
-- bs → bisa
-- dll → dan lain-lain
-- ke detect → terdeteksi
-- krna → karena
-- sdh → sudah
-- ga → tidak
-- krn → karena
+- tpi → tetapi
+- ttg → tentang
 - udh → udah
 - blm → belum
-- gbs → tidak bisa
-- dl → terlebih dahulu
+- sdh → sudah
+- ga → tidak
+- gk → tidak
+- ke trigger → ter-trigger
+- krn → karena
+- krna → karena
 - tgg → tunggu
-- tpi → tetapi
-- sblm → sebelum
-- ttg → tentang
-- kl → kalau
+- bs → bisa
+- dl → terlebih dahulu
+- dll → dan lain-lain
+- gbs → tidak bisa
+- ke detect → terdeteksi
 
 Sekarang, format catatan mentah berikut:

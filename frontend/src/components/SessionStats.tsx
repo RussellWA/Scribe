@@ -35,9 +35,9 @@ export default function SessionStats({ stats, model, elapsed }: SessionStatsProp
     return (
         <div className="flex justify-center items-center h-full rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-3">
             <div className="flex justify-center items-center gap-8">
-                <HorStat label="Characters" value={stats.characters} />
+                {/* <HorStat label="Characters" value={stats.characters} /> */}
                 <HorStat label="Words" value={stats.words} />
-                <HorStat label="Lines" value={stats.lines} />
+                {/* <HorStat label="Lines" value={stats.lines} /> */}
 
                 <VerticalDivider />
 
