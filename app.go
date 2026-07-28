@@ -41,3 +41,11 @@ func (a *App) GetGlossary() (map[string]string, error) {
 func (a *App) SaveGlossary(dict map[string]string) error {
 	return service.SaveGlossary(dict)
 }
+
+func (a *App) GetNormalization() (map[string]string, error) {
+	return service.LoadNormalization()
+}
+
+func (a *App) SaveNormalization(dict map[string]string) error {
+	return service.SaveNormalization(dict)
+}

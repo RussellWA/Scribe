@@ -6,6 +6,10 @@ export function Generate(arg1:types.GenerateRequest):Promise<types.GenerateRespo
 
 export function GetGlossary():Promise<Record<string, string>>;
 
+export function GetNormalization():Promise<Record<string, string>>;
+
 export function Greet(arg1:string):Promise<string>;
 
 export function SaveGlossary(arg1:Record<string, string>):Promise<void>;
+
+export function SaveNormalization(arg1:Record<string, string>):Promise<void>;
