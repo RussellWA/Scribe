@@ -39,7 +39,7 @@ func BuildSystemPrompt(cfg *config.Config) (string, error) {
 	if err := appendFailures(
 		&builder,
 		"Known Failures",
-		cfg.Failure..., // Expand slice if cfg.Failure is []string
+		cfg.Failure, // Expand slice if cfg.Failure is []string
 	); err != nil {
 		return "", err
 	}
