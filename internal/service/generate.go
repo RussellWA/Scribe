@@ -96,10 +96,10 @@ func Generate(
 
 	elapsed := time.Since(start)
 
-	finalOutput = fmt.Sprintf("%s\n\n%s", req.Title, finalOutput)
+	output := fmt.Sprintf("%s\n\n%s", req.Title, finalOutput)
 
 	return types.GenerateResponse{
-		Output:    finalOutput,
+		Output:    output,
 		ElapsedMs: elapsed.Milliseconds(),
 	}, nil
 }

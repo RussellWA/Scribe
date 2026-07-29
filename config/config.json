@@ -6,7 +6,5 @@
     ],
     "normalization": "data/normalization.json",
     "glossary": "data/glossary.json",
-    "failure": "data/failure.json",
-    "inputDirectory": "input",
-    "outputDirectory": "output"
+    "failure": "data/failure.json"
 }
