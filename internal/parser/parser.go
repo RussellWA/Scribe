@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func Parse(input string, title string) (*MeetingInput, error) {
+func Parse(input string) (*MeetingInput, error) {
 	meeting := &MeetingInput{}
 
 	lines := strings.Split(input, "\n")

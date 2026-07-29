@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"os"
 	"time"
 
 	"github.com/ollama/ollama/api"
@@ -22,7 +21,6 @@ func Generate(
 	types.GenerateResponse,
 	error,
 ) {
-	logToFile("Checking requests")
 	if req.Title == "" {
 		return types.GenerateResponse{}, fmt.Errorf("Meeting title is missing")
 	}
@@ -31,36 +29,24 @@ func Generate(
 		return types.GenerateResponse{}, fmt.Errorf("Meeting notes areas missing")
 	}
 
-	logToFile("Loading Configs")
-
 	cfg, err := config.LoadConfig()
 	if err != nil {
 		panic(err)
 	}
-
-	fmt.Println("Building System Prompt... please wait.")
-
-	logToFile("Building prompt")
 
 	systemPrompt, err := prompt.BuildSystemPrompt(cfg)
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println("Validating Input... please wait.")
-
 	input := req.Notes
-
-	logToFile("Validating Input")
 
 	err = validator.ValidateInput(input)
 	if err != nil {
 		return types.GenerateResponse{}, err
 	}
 
-	logToFile("Parsing Input")
-
-	meeting, err := parser.Parse(input, req.Title)
+	meeting, err := parser.Parse(input)
 	if err != nil {
 		return types.GenerateResponse{}, err
 	}
@@ -69,23 +55,12 @@ func Generate(
 
 	fullPrompt := prompt.BuildRequest(systemPrompt, structuredInput)
 
-	fmt.Println("Processing with AI... please wait.")
-
-	logToFile("1. Frontend requested text generation")
-
-	// Explicitly define the local URL
 	ollamaURL, err := url.Parse("http://127.0.0.1:11434")
 	if err != nil {
 		return types.GenerateResponse{}, err
 	}
 
-	// Create a client that points directly to localhost, ignoring OS environments
 	client := api.NewClient(ollamaURL, http.DefaultClient)
-	// if err != nil {
-	// 	return types.GenerateResponse{}, fmt.Errorf("failed to connect to Ollama: %w", err)
-	// }
-
-	logToFile("2. Client created, sending request...")
 
 	start := time.Now()
 
@@ -119,21 +94,12 @@ func Generate(
 		return nil
 	})
 
-	logToFile("3. SUCCESS: Got response from Ollama")
-
 	elapsed := time.Since(start)
 
-	fmt.Println(structuredInput)
+	finalOutput = fmt.Sprintf("%s\n\n%s", req.Title, finalOutput)
 
 	return types.GenerateResponse{
 		Output:    finalOutput,
 		ElapsedMs: elapsed.Milliseconds(),
 	}, nil
-}
-
-func logToFile(msg string) {
-	f, _ := os.OpenFile("scribe_debug.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	defer f.Close()
-	timestamp := time.Now().Format("15:04:05")
-	f.WriteString(fmt.Sprintf("[%s] %s\n", timestamp, msg))
 }
