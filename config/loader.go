@@ -1,12 +1,15 @@
 package config
 
 import (
+	"embed"
 	"encoding/json"
-	"os"
 )
 
-func LoadConfig(path string) (*Config, error) {
-	data, err := os.ReadFile(path)
+//go:embed config.json
+var configFS embed.FS
+
+func LoadConfig() (*Config, error) {
+	data, err := configFS.ReadFile("config.json")
 	if err != nil {
 		return nil, err
 	}

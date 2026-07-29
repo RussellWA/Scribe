@@ -33,7 +33,7 @@ func Generate(
 
 	logToFile("Loading Configs")
 
-	cfg, err := config.LoadConfig("config/config.json")
+	cfg, err := config.LoadConfig()
 	if err != nil {
 		panic(err)
 	}
