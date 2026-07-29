@@ -47,18 +47,6 @@ func Generate(
 		panic(err)
 	}
 
-	logToFile("Writing Prompt")
-
-	err = os.WriteFile(
-		"generated/system_prompt.md",
-		[]byte(systemPrompt),
-		0644,
-	)
-
-	if err != nil {
-		panic(err)
-	}
-
 	fmt.Println("Validating Input... please wait.")
 
 	input := req.Notes

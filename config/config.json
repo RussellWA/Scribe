@@ -7,7 +7,6 @@
     "normalization": "data/normalization.json",
     "glossary": "data/glossary.json",
     "failure": "data/failure.json",
-    "generatedPrompt": "generated/system_prompt.md",
     "inputDirectory": "input",
     "outputDirectory": "output"
 }
