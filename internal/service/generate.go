@@ -8,6 +8,8 @@ import (
 	"Scribe/internal/validator"
 	"context"
 	"fmt"
+	"net/http"
+	"net/url"
 	"os"
 	"time"
 
@@ -70,7 +72,14 @@ func Generate(
 
 	fmt.Println("Processing with AI... please wait.")
 
-	client, err := api.ClientFromEnvironment()
+	// Explicitly define the local URL
+	ollamaURL, err := url.Parse("http://127.0.0.1:11434")
+	if err != nil {
+		return types.GenerateResponse{}, err
+	}
+
+	// Create a client that points directly to localhost, ignoring OS environments
+	client := api.NewClient(ollamaURL, http.DefaultClient)
 	if err != nil {
 		return types.GenerateResponse{}, fmt.Errorf("failed to connect to Ollama: %w", err)
 	}

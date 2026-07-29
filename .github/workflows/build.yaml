@@ -36,6 +36,7 @@ jobs:
         run: |
           cd frontend
           npm ci
+          npm run build
 
       - name: Build
         run: wails build
