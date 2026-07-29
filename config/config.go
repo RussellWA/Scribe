@@ -58,6 +58,8 @@ func EnsureUserFilesExist() error {
 			// SKIP PRINT
 			fmt.Printf("⏭️ SKIPPED: %s already exists in AppData\n", fileName)
 		}
+
+		fmt.Printf("📂 APPDATA PATH IS: %s\n", appDataDir)
 	}
 	return nil
 }
