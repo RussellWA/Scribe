@@ -44,6 +44,15 @@ func BuildSystemPrompt(cfg *config.Config) (string, error) {
 		return "", err
 	}
 
+	// Writing Failure
+	if err := appendDictionary(
+		&builder,
+		"Known Failures",
+		cfg.Failure,
+	); err != nil {
+		return "", err
+	}
+
 	builder.WriteString("Sekarang, format catatan mentah berikut:")
 	return builder.String(), nil
 }

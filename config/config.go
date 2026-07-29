@@ -5,6 +5,7 @@ type Config struct {
 	PromptFiles     []string `json:"promptFiles"`
 	Normalization   string   `json:"normalization"`
 	Glossary        string   `json:"glossary"`
+	Failure         string   `json:"failure"`
 	GeneratedPrompt string   `json:"generatedPrompt"`
 	InputDirectory  string   `json:"inputDirectory"`
 	OutputDirectory string   `json:"outputDirectory"`
