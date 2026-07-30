@@ -1,17 +1,17 @@
 package service
 
 import (
+	"Scribe/config"
 	"encoding/json"
 	"os"
 )
 
-const (
-	normalizationPath = "data/normalization.json"
-	glossaryPath      = "data/glossary.json"
-	failurePath       = "data/failure.json"
-)
+func loadDictionary(fileName string) (map[string]string, error) {
+	path, err := config.GetUserFilePath(fileName)
+	if err != nil {
+		return nil, err
+	}
 
-func loadDictionary(path string) (map[string]string, error) {
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
@@ -27,7 +27,12 @@ func loadDictionary(path string) (map[string]string, error) {
 	return dictionary, nil
 }
 
-func saveDictionary(path string, dictionary map[string]string) error {
+func saveDictionary(fileName string, dictionary map[string]string) error {
+	path, err := config.GetUserFilePath(fileName)
+	if err != nil {
+		return err
+	}
+
 	data, err := json.MarshalIndent(dictionary, "", "    ")
 	if err != nil {
 		return err
@@ -37,19 +42,19 @@ func saveDictionary(path string, dictionary map[string]string) error {
 }
 
 func LoadNormalization() (map[string]string, error) {
-	return loadDictionary(normalizationPath)
+	return loadDictionary("normalization.json")
 }
 
 func SaveNormalization(dictionary map[string]string) error {
-	return saveDictionary(normalizationPath, dictionary)
+	return saveDictionary("normalization.json", dictionary)
 }
 
 func LoadGlossary() (map[string]string, error) {
-	return loadDictionary(glossaryPath)
+	return loadDictionary("glossary.json")
 }
 
 func SaveGlossary(dictionary map[string]string) error {
-	return saveDictionary(glossaryPath, dictionary)
+	return saveDictionary("glossary.json", dictionary)
 }
 
 type FailureEntry struct {
@@ -73,7 +78,12 @@ func loadFailure(path string) (map[string]FailureEntry, error) {
 	return dictionary, nil
 }
 
-func saveFailure(path string, dictionary map[string]FailureEntry) error {
+func saveFailure(fileName string, dictionary map[string]FailureEntry) error {
+	path, err := config.GetUserFilePath(fileName)
+	if err != nil {
+		return err
+	}
+
 	data, err := json.MarshalIndent(dictionary, "", "  ")
 	if err != nil {
 		return err
@@ -83,9 +93,9 @@ func saveFailure(path string, dictionary map[string]FailureEntry) error {
 }
 
 func LoadFailure() (map[string]FailureEntry, error) {
-	return loadFailure(failurePath)
+	return loadFailure("failure.json")
 }
 
 func SaveFailure(dictionary map[string]FailureEntry) error {
-	return saveFailure(failurePath, dictionary)
+	return saveFailure("failure.json", dictionary)
 }
