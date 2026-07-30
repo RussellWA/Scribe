@@ -76,6 +76,10 @@ func loadFailure(path string) (map[string]FailureEntry, error) {
 		return nil, err
 	}
 
+	fmt.Printf("Data:\n%s\n", string(data))
+
+	fmt.Printf("Dict:\n%+v\n", dictionary)
+
 	return dictionary, nil
 }
 
@@ -89,8 +93,6 @@ func saveFailure(fileName string, dictionary map[string]FailureEntry) error {
 	if err != nil {
 		return err
 	}
-
-	fmt.Printf("Failure\n", data)
 
 	return os.WriteFile(path, data, 0644)
 }
