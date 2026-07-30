@@ -35,8 +35,8 @@ func BuildSystemPrompt(cfg *config.Config) (string, error) {
 	if err := appendDictionary(
 		&builder,
 		"Writing Dictionary",
-		cfg.Glossary,
-		cfg.Normalization,
+		"glossary.json",
+		"normalization.json",
 	); err != nil {
 		return "", err
 	}
@@ -44,7 +44,7 @@ func BuildSystemPrompt(cfg *config.Config) (string, error) {
 	if err := appendFailures(
 		&builder,
 		"Known Failures",
-		cfg.Failure, // Expand slice if cfg.Failure is []string
+		"failure.json",
 	); err != nil {
 		return "", err
 	}

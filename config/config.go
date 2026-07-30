@@ -8,10 +8,7 @@ import (
 )
 
 type Config struct {
-	PromptFiles   []string `json:"promptFiles"`
-	Normalization string   `json:"normalization"`
-	Glossary      string   `json:"glossary"`
-	Failure       string   `json:"failure"`
+	PromptFiles []string `json:"promptFiles"`
 }
 
 //go:embed defaults/*
