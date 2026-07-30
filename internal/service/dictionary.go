@@ -3,7 +3,6 @@ package service
 import (
 	"Scribe/config"
 	"encoding/json"
-	"fmt"
 	"os"
 )
 
@@ -63,7 +62,12 @@ type FailureEntry struct {
 	Right string `json:"right"`
 }
 
-func loadFailure(path string) (map[string]FailureEntry, error) {
+func loadFailure(fileName string) (map[string]FailureEntry, error) {
+	path, err := config.GetUserFilePath(fileName)
+	if err != nil {
+		return nil, err
+	}
+
 	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
@@ -75,10 +79,6 @@ func loadFailure(path string) (map[string]FailureEntry, error) {
 	if err != nil {
 		return nil, err
 	}
-
-	fmt.Printf("Data:\n%s\n", string(data))
-
-	fmt.Printf("Dict:\n%+v\n", dictionary)
 
 	return dictionary, nil
 }

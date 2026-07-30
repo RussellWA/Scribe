@@ -48,15 +48,7 @@ func EnsureUserFilesExist() error {
 			if err := os.WriteFile(userFilePath, defaultData, 0644); err != nil {
 				return fmt.Errorf("failed to write user file %s: %w", fileName, err)
 			}
-
-			// SUCCESS PRINT
-			fmt.Printf("✅ CREATED: Successfully seeded %s in AppData\n", fileName)
-		} else {
-			// SKIP PRINT
-			fmt.Printf("⏭️ SKIPPED: %s already exists in AppData\n", fileName)
 		}
-
-		fmt.Printf("📂 APPDATA PATH IS: %s\n", appDataDir)
 	}
 	return nil
 }
