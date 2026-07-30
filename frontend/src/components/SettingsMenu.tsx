@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { BookOpen, Languages, Settings } from 'lucide-react';
+import { BookOpen, Languages, Settings, AlertTriangle } from 'lucide-react';
 
 interface SettingsMenuProps {
   openGlossary: () => void;
@@ -69,7 +69,7 @@ export default function SettingsMenu({
             }}
             className="flex w-full items-center gap-3 px-4 py-3 transition hover:bg-zinc-800"
           >
-            <Languages size={18} />
+            <AlertTriangle size={18} />
             Failure
           </button>
         </div>

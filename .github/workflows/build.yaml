@@ -39,7 +39,7 @@ jobs:
           npm run build
 
       - name: Build
-        run: wails build -debug
+        run: wails build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v5
