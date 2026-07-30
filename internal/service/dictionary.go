@@ -3,6 +3,7 @@ package service
 import (
 	"Scribe/config"
 	"encoding/json"
+	"fmt"
 	"os"
 )
 
@@ -88,6 +89,8 @@ func saveFailure(fileName string, dictionary map[string]FailureEntry) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Printf("Failure\n", data)
 
 	return os.WriteFile(path, data, 0644)
 }
