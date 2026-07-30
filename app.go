@@ -57,3 +57,7 @@ func (a *App) GetFailure() (map[string]service.FailureEntry, error) {
 func (a *App) SaveFailure(dict map[string]service.FailureEntry) error {
 	return service.SaveFailure(dict)
 }
+
+func (a *App) CheckUpdates() (service.UpdateInfo, error) {
+	return service.CheckForUpdates()
+}
