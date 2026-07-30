@@ -1,17 +1,21 @@
-name: Build Scribe
+name: Build and Release Scribe
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   build:
     strategy:
       matrix:
-        os:
-          - windows-latest
-          - macos-latest
+        include:
+          - os: windows-latest
+            asset_name: Scribe-Windows.zip
+            path: build/bin/Scribe.exe # Adjust if your binary name is different
+          - os: macos-latest
+            asset_name: Scribe-macOS.zip
+            path: build/bin/Scribe.app
 
     runs-on: ${{ matrix.os }}
 
@@ -39,11 +43,26 @@ jobs:
           npm ci
           npm run build
 
-      - name: Build
+      - name: Build Wails App
         run: wails build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v5
+      # Zip the build output so it's clean for users to download
+      - name: Compress Windows Build
+        if: matrix.os == 'windows-latest'
+        run: Compress-Archive -Path build/bin/* -DestinationPath Scribe-Windows.zip
+
+      - name: Compress macOS Build
+        if: matrix.os == 'macos-latest'
+        run: |
+          cd build/bin
+          zip -r ../../Scribe-macOS.zip Scribe.app
+
+      # This creates the GitHub Release and attaches the zip files automatically!
+      - name: Create Release and Upload Assets
+        uses: softprops/action-gh-release@v2
         with:
-          name: Scribe-${{ matrix.os }}
-          path: build/bin
+          files: |
+            Scribe-Windows.zip
+            Scribe-macOS.zip
+          draft: false
+          prerelease: false

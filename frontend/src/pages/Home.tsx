@@ -52,7 +52,6 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
                 title,
                 notes: input,
             });
-            console.log("Request:", request);
             const result = await generateMinutes(request);
         
             setOutput(result.output);
