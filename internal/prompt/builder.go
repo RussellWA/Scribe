@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-//go:embed assets data
+//go:embed assets
 var embeddedFS embed.FS
 
 type Glossary map[string]string

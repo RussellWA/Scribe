@@ -7,9 +7,9 @@ import Failure from './components/Failure';
 
 import type { Page } from './types/Page';
 
-import { CheckUpdates } from '../../wailsjs/go/main/App'; 
-import { BrowserOpenURL } from '../../wailsjs/runtime/runtime'; 
-import { service } from '../../wailsjs/go/models'; 
+import { CheckUpdates } from '../wailsjs/go/main/App'; 
+import { BrowserOpenURL } from '../wailsjs/runtime/runtime'; 
+import { service } from '../wailsjs/go/models';
 
 export default function App() {
     const [page, setPage] = useState<Page>('home');
