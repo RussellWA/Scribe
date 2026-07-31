@@ -112,8 +112,8 @@ func appendFailures(builder *strings.Builder, title string, fileNames ...string)
 			return fmt.Errorf("failed to parse JSON in %s: %w", fileName, err)
 		}
 
-		for _, item := range failures {
-			builder.WriteString(fmt.Sprintf("- Salah: %s\n  Benar: %s\n\n", item.Wrong, item.Right))
+		for inputKey, item := range failures {
+			builder.WriteString(fmt.Sprintf("- Input: %s\n  Salah: %s\n  Benar: %s\n\n---\n\n", inputKey, item.Wrong, item.Right))
 		}
 	}
 
