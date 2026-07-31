@@ -113,7 +113,7 @@ func appendFailures(builder *strings.Builder, title string, fileNames ...string)
 		}
 
 		for inputKey, item := range failures {
-			builder.WriteString(fmt.Sprintf("- Input: %s\n  Salah: %s\n  Benar: %s\n\n---\n\n", inputKey, item.Wrong, item.Right))
+			builder.WriteString(fmt.Sprintf("Input: %s\nSalah: %s\nBenar: %s\n\n---\n\n", inputKey, item.Wrong, item.Right))
 		}
 	}
 
