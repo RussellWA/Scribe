@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { types } from '../../wailsjs/go/models';
 import Editor from '../components/Editor';
@@ -21,6 +21,8 @@ interface HomeProps {
 }
 
 export default function Home({ openGlossary, openNormalization, openFailure }: HomeProps) {
+    const titleRef = useRef<HTMLInputElement>(null);
+    
     const [title, setTitle] = useState('');
     const [input, setInput] = useState('');
     const [output, setOutput] = useState('');
@@ -33,6 +35,10 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
 
     const stats = calculateStats(input);
 
+    useEffect(() => {
+        titleRef.current?.focus();
+    }, []);
+
     const handleClear = () => {
         const ok = window.confirm('Clear the current meeting?');
 
@@ -42,6 +48,10 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
         setInput('');
         setOutput('');
         setElapsed(0);
+
+        setTimeout(() => {
+            titleRef.current?.focus();
+        }, 10);
     };
 
     const handleGenerate = async () => {
@@ -65,6 +75,22 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
         }
     };
 
+    const handleSave = () => {
+        if (!canCopySave) return;
+        saveMarkdown(title, output);
+    };
+
+    const handleCopy = () => {
+        if (!canCopySave) return;
+
+        const selection = window.getSelection();
+        if (selection && selection.toString().length > 0) {
+            return; 
+        }
+
+        copyOutput(output);
+    };
+
     // Ctrl + Enter (works inside textarea)
     useKeyboardShortcut('Enter', handleGenerate, {
         ctrl: true,
@@ -72,9 +98,14 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
     });
 
     // Ctrl + S (won't trigger while typing)
-    // useKeyboardShortcut('s', handleSave, {
-    //   ctrl: true,
-    // });
+    useKeyboardShortcut('s', handleSave, {
+        ctrl: true,
+    });
+
+    // Ctrl + C (Smart Copy)
+    useKeyboardShortcut('c', handleCopy, {
+        ctrl: true,
+    });
 
     // Ctrl + K (won't trigger while typing)
     // useKeyboardShortcut('k', openSettings, {
@@ -93,6 +124,7 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
                 <div className="flex w-full items-stretch gap-6">
                     <div className="flex-1 space-y-4">
                         <MeetingTitle
+                            ref={titleRef}
                             value={title}
                             onChange={setTitle}
                             disabled={loading}
@@ -105,7 +137,7 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
                     </div>
 
                     <div className="shrink-0">
-                        <SessionStats stats={stats} model="qwen3:8b" elapsed={elapsed} />
+                        <SessionStats stats={stats} elapsed={elapsed} />
                     </div>
                 </div>
 

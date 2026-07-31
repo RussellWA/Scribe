@@ -3,7 +3,7 @@ import VerticalDivider from './VerticalDivider';
 
 interface SessionStatsProps {
   stats: SessionStat;
-  model: string;
+  // model: string;
   elapsed?: number;
 }
 
@@ -31,7 +31,7 @@ function VertStat({ label, value }: { label: string; value: React.ReactNode }) {
   );
 }
 
-export default function SessionStats({ stats, model, elapsed }: SessionStatsProps) {
+export default function SessionStats({ stats, elapsed }: SessionStatsProps) {
     return (
         <div className="flex justify-center items-center h-full rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-3">
             <div className="flex justify-center items-center gap-8">
@@ -53,10 +53,10 @@ export default function SessionStats({ stats, model, elapsed }: SessionStatsProp
 
                 <VerticalDivider />
 
-                <HorStat label="Model" value={model} />
+                {/* <HorStat label="Model" value={model} /> */}
                 <HorStat
                     label="Time"
-                    value={elapsed ? `${elapsed.toFixed(2)} ms` : '-'}
+                    value={elapsed ? `${(elapsed / 1000).toFixed(2)} s` : '-'}
                 />
             </div>
         </div>
