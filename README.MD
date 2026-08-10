@@ -6,12 +6,12 @@ Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [
 
 * **100% Local & Private:** Your meeting notes never leave your computer. Everything runs locally on your own hardware.
 * **AI-Powered:** Uses local LLMs (defaults to `qwen3:8b`) to intelligently format notes, identify action items, and flag things that need confirmation.
-* **Smart Glossary & Auto-Correction:** Reads from custom local JSON files (`glossary.json` and `failures.json`) to enforce company-specific acronyms, vocabulary, and grammar rules.
+* **Smart Glossary & Auto-Correction:** Reads from custom local JSON files to enforce company-specific acronyms, vocabulary, and grammar rules.
 * **Keyboard-First Workflow:** 
   * `Ctrl + Enter` / `Cmd + Enter` to Generate
   * `Ctrl + S` / `Cmd + S` to Save as Markdown
   * `Ctrl + C` / `Cmd + C` to Smart-Copy Output
-* **🔄 Auto-Updates:** Built-in checker notifies you when a new release is available on GitHub.
+* **Auto-Updates:** Built-in checker notifies you when a new release is available on GitHub.
 
 <!--
 * **💾 Auto-Save Drafts:** Accidentally closed the app? Your notes are safely restored the next time you open it.
