@@ -2,15 +2,7 @@
 
 Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [Wails](https://wails.io/) (Go + React), it uses local AI via Ollama to instantly transform your messy meeting notes into structured, professional summaries without ever sending your data to the cloud.
 
-<p align="center">
-  <img src="assets/logos/wails.svg" alt="Wails" height="50"/>
-  &nbsp;&nbsp;
-  <img src="assets/logos/go.svg" alt="Go" height="50"/>
-  &nbsp;&nbsp;
-  <img src="assets/logos/react.svg" alt="React" height="50"/>
-  &nbsp;&nbsp;
-  <img src="assets/logos/ollama.svg" alt="Ollama" height="50"/>
-</p>
+<p align="center"> <img src="https://raw.githubusercontent.com/wailsapp/wails/master/build/appicon.png" alt="Wails" width="80"/> &nbsp;&nbsp;&nbsp; <img src="https://go.dev/images/go-logo-white.svg" alt="Go" width="80"/> &nbsp;&nbsp;&nbsp; <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="80"/> &nbsp;&nbsp;&nbsp; <img src="https://ollama.com/public/ollama.png" alt="Ollama" width="80"/> </p>
 
 <!-- [Hero GIF / Screenshot] -->
 
