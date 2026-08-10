@@ -2,6 +2,8 @@
 
 Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [Wails](https://wails.io/) (Go + React), it uses local AI via Ollama to instantly transform your messy meeting notes into structured, professional summaries without ever sending your data to the cloud.
 
+---
+
 ## Features
 
 * **100% Local & Private:** Your meeting notes never leave your computer. Everything runs locally on your own hardware.
@@ -17,6 +19,8 @@ Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [
 * **💾 Auto-Save Drafts:** Accidentally closed the app? Your notes are safely restored the next time you open it.
 -->
 
+---
+
 ## Prerequisites
 
 Because Scribe runs AI locally, you must have [Ollama](https://ollama.com/) installed on your machine.
@@ -25,6 +29,8 @@ Because Scribe runs AI locally, you must have [Ollama](https://ollama.com/) inst
 2. Open your terminal and pull the required model:
    ```bash
    ollama run qwen3:8b
+
+---
 
 ## Installation
 
@@ -36,6 +42,8 @@ You don't need to install any additional dependencies to use Scribe.
    * `Scribe-macOS.zip` — macOS
 3. Extract the downloaded archive.
 4. Run the Scribe application.
+
+---
 
 ## Customizing AI Behavior
 
