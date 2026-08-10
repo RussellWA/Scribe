@@ -39,40 +39,26 @@ You don't need to install any additional dependencies to use Scribe.
 
 ## Customizing AI Behavior
 
-Scribe is currently designed primarily for Indonesian-language text and allows you to customize how the AI processes and generates text without modifying the source code.
+Scribe is currently designed primarily for **Indonesian-language text** and provides built-in tools for customizing how the AI processes and generates text.
 
-Scribe uses two local JSON configuration files to provide additional context and rules to the AI:
+### Glossary
 
-### glossary.json
-
-Use the glossary to define terminology, abbreviations, and acronyms that are specific to your organization or project.
-
-For example:
-
-{
-  "GTB": "Go-To-Market Board"
-}
+Add custom terminology, abbreviations, and acronyms that are specific to your organization or project.
 
 This helps Scribe understand terms that may not be part of the AI model's default vocabulary and maintain consistent terminology throughout its output.
 
-### normalization.json
+### Normalization
 
-Use the normalization file to define common variations, slang, or incorrect forms of Indonesian text and their preferred replacements.
+Define common variations, slang, or informal Indonesian expressions and their preferred forms.
 
-For example:
+This allows Scribe to normalize inconsistent input before it is processed by the AI, helping produce cleaner and more consistent results.
 
-{
-  "gak": "tidak",
-  "yg": "yang"
-}
+Both features can be managed directly through Scribe's interface without modifying configuration files or source code.
 
-These rules help normalize input before it is processed by the AI, allowing Scribe to handle informal or inconsistent Indonesian text more consistently.
 
-Both files can be customized to fit your own terminology and writing conventions.
+### Failures
 
-### `failures.json`
-
-Use this file to provide examples of common mistakes that the AI should avoid.
+Provide examples of common mistakes that the AI should avoid.
 
 You can define a **wrong** example alongside the **correct** version, allowing Scribe to use these examples when generating or correcting text.
 
