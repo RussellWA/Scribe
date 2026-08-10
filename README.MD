@@ -2,6 +2,8 @@
 
 Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [Wails](https://wails.io/) (Go + React), it uses local AI via Ollama to instantly transform your messy meeting notes into structured, professional summaries without ever sending your data to the cloud.
 
+<!-- [Hero GIF / Screenshot] -->
+
 ---
 
 ## Features
@@ -19,7 +21,32 @@ Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [
 * **💾 Auto-Save Drafts:** Accidentally closed the app? Your notes are safely restored the next time you open it.
 -->
 
+
 ---
+
+## Project Background
+
+Scribe originally started as a tool built at the request of a friend who needed a way to improve and standardize Indonesian-language text using a local AI model.
+
+The project is developed free of charge as a personal project. At the same time, it serves as an opportunity for me to explore and learn more about local Large Language Models (LLMs), prompt engineering, AI-assisted text processing, and building applications around locally hosted AI.
+
+As a result, Scribe is both a practical tool for its original use case and a learning project for experimenting with local AI technologies.
+
+---
+<!--
+## 📸 Screenshots
+
+### Main Interface
+[image]
+
+### AI Customization
+[image]
+
+### Before & After
+[image]
+
+---
+-->
 
 ## Prerequisites
 
@@ -72,21 +99,8 @@ You can define a **wrong** example alongside the **correct** version, allowing S
 
 ---
 
-## Project Background
-
-Scribe originally started as a tool built at the request of a friend who needed a way to improve and standardize Indonesian-language text using a local AI model.
-
-The project is developed free of charge as a personal project. At the same time, it serves as an opportunity for me to explore and learn more about local Large Language Models (LLMs), prompt engineering, AI-assisted text processing, and building applications around locally hosted AI.
-
-As a result, Scribe is both a practical tool for its original use case and a learning project for experimenting with local AI technologies.
-
----
-
 ## Privacy
 
-Scribe is designed with privacy in mind.
-
-* **No telemetry**
 * **No tracking**
 * **No third-party AI API calls**
 * **No data sent to OpenAI, Anthropic, or other external AI providers**
