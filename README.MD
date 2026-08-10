@@ -62,7 +62,11 @@ As a result, Scribe is both a practical tool for its original use case and a lea
 
 ## Prerequisites
 
-Because Scribe runs AI locally, you must have [Ollama](https://ollama.com/) installed on your machine.
+Scribe currently uses Qwen3 8B through Ollama for its AI processing.
+
+Because the model runs locally on your own hardware, performance depends on your system's CPU, GPU, RAM, and available resources.
+
+> **⚠️ Performance Note:** Qwen3 8B is a relatively large local model. Lower-end laptops and desktops may experience slower response times, longer processing times, or higher system resource usage. Systems with more RAM and a capable GPU will generally provide a smoother experience.
 
 1. Download and install [Ollama](https://ollama.com/download).
 2. Open your terminal and pull the required model:
