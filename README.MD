@@ -42,8 +42,6 @@ Scribe originally started as a tool built at the request of a friend who needed 
 
 The project is developed free of charge as a personal project. At the same time, it serves as an opportunity for me to explore and learn more about local Large Language Models (LLMs), prompt engineering, AI-assisted text processing, and building applications around locally hosted AI.
 
-As a result, Scribe is both a practical tool for its original use case and a learning project for experimenting with local AI technologies.
-
 ---
 <!--
 ## 📸 Screenshots
