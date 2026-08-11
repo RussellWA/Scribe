@@ -2,6 +2,7 @@ package main
 
 import (
 	"Scribe/config"
+	"Scribe/internal/service"
 	"embed"
 	"log"
 
@@ -20,6 +21,7 @@ func main() {
 
 	// Create an instance of the app structure
 	app := NewApp()
+	ollamaSvc := service.NewOllamaService()
 
 	// Create application with options
 	err := wails.Run(&options.App{
@@ -34,6 +36,7 @@ func main() {
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
+			ollamaSvc,
 		},
 	})
 

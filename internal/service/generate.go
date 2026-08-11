@@ -55,8 +55,6 @@ func Generate(
 
 	fullPrompt := prompt.BuildRequest(systemPrompt, structuredInput)
 
-	fmt.Printf("Test: %s", fullPrompt)
-
 	ollamaURL, err := url.Parse("http://127.0.0.1:11434")
 	if err != nil {
 		return types.GenerateResponse{}, err

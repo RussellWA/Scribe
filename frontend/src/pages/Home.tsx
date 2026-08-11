@@ -28,6 +28,7 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
     const [output, setOutput] = useState('');
     const [elapsed, setElapsed] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [selectedModel, setSelectedModel] = useState('');
 
     const canGenerate = title.trim() !== '' && input.trim() !== '';
     const canCopySave = output.trim() !== '';
@@ -137,7 +138,12 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
                     </div>
 
                     <div className="shrink-0">
-                        <SessionStats stats={stats} elapsed={elapsed} />
+                        <SessionStats 
+                            stats={stats} 
+                            elapsed={elapsed} 
+                            selectedModel={selectedModel}
+                            onSelectModel={setSelectedModel}
+                        />
                     </div>
                 </div>
 

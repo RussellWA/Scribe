@@ -1,37 +1,39 @@
 import type { SessionStat } from '../types/Statistics';
+import { ModelSelector } from './ModelSelector';
 import VerticalDivider from './VerticalDivider';
 
 interface SessionStatsProps {
-  stats: SessionStat;
-  // model: string;
-  elapsed?: number;
+    stats: SessionStat;
+    selectedModel: string;
+    onSelectModel: (model: string) => void;
+    elapsed?: number;
 }
 
 function HorStat({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div className="flex flex-col">
-      <span className="text-xs uppercase tracking-wide text-zinc-500">
-        {label}
-      </span>
+    return (
+        <div className="flex flex-col">
+            <span className="text-xs uppercase tracking-wide text-zinc-500">
+                {label}
+            </span>
 
-      <span className="text-lg font-semibold text-white">{value}</span>
-    </div>
-  );
+            <span className="text-lg font-semibold text-white">{value}</span>
+        </div>
+    );
 }
 
 function VertStat({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="text-xs uppercase tracking-wide text-zinc-500">
-        {label}
-      </span>
+    return (
+        <div className="flex items-center gap-3">
+            <span className="text-xs uppercase tracking-wide text-zinc-500">
+                {label}
+            </span>
 
-      <span className="text-lg font-semibold text-white">{value}</span>
-    </div>
-  );
+            <span className="text-lg font-semibold text-white">{value}</span>
+        </div>
+    );
 }
 
-export default function SessionStats({ stats, elapsed }: SessionStatsProps) {
+export default function SessionStats({ stats, elapsed, selectedModel, onSelectModel }: SessionStatsProps) {
     return (
         <div className="flex justify-center items-center h-full rounded-xl border border-zinc-800 bg-zinc-900 px-5 py-3">
             <div className="flex justify-center items-center gap-8">
@@ -53,7 +55,15 @@ export default function SessionStats({ stats, elapsed }: SessionStatsProps) {
 
                 <VerticalDivider />
 
-                {/* <HorStat label="Model" value={model} /> */}
+                <HorStat 
+                    label="Model" 
+                    value={
+                        <ModelSelector 
+                            selectedModel={selectedModel} 
+                            onSelectModel={onSelectModel} 
+                        />
+                    } 
+                />
                 <HorStat
                     label="Time"
                     value={elapsed ? `${(elapsed / 1000).toFixed(2)} s` : '-'}
