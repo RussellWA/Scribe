@@ -15,7 +15,7 @@ jobs:
         include:
           - os: windows-latest
             asset_name: Scribe-Windows.zip
-            path: build/bin/Scribe.exe # Adjust if your binary name is different
+            path: build/bin/Scribe.exe
           - os: macos-latest
             asset_name: Scribe-macOS.zip
             path: build/bin/Scribe.app
