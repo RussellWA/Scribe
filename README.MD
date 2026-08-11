@@ -86,6 +86,22 @@ You don't need to install any additional dependencies to use Scribe.
 3. Extract the downloaded archive.
 4. Run the Scribe application.
 
+### macOS: Opening Scribe
+
+Because Scribe is currently distributed without Apple Developer ID notarization, macOS may prevent the application from opening the first time you launch it.
+
+If macOS displays a warning that Scribe cannot be opened, follow these steps:
+
+1. Open the app normally so the error pops up, then click Done or Cancel
+2. Click the Apple menu in the top left corner and select *System Settings*.
+3. Click on *Privacy & Security* in the left sidebar.
+4. Scroll down to the security section. You will see a message saying the app was blocked from use.
+5. Click the Open Anyway button next to it.
+
+After completing these steps, you should be able to open Scribe normally.
+
+> **Note:** This warning is caused by macOS security protections for applications that have not been notarized by Apple. It does not necessarily indicate that there is a problem with Scribe.
+
 ---
 
 ## Customizing AI Behavior
