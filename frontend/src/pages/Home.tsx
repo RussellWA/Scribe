@@ -62,6 +62,7 @@ export default function Home({ openGlossary, openNormalization, openFailure }: H
             const request = new types.GenerateRequest({
                 title,
                 notes: input,
+                model: selectedModel,
             });
             const result = await generateMinutes(request);
         

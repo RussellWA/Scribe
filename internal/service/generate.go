@@ -77,7 +77,7 @@ func Generate(
 	}
 
 	request := &api.GenerateRequest{
-		Model:     "qwen3:8b",
+		Model:     req.Model,
 		Prompt:    fullPrompt,
 		Stream:    &stream,
 		KeepAlive: keepAlive,
