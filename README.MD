@@ -60,16 +60,29 @@ The project is developed free of charge as a personal project. At the same time,
 
 ## Prerequisites
 
-Scribe currently uses Qwen3 8B through Ollama for its AI processing.
+Scribe uses **Ollama** for its local AI processing.
 
-Because the model runs locally on your own hardware, performance depends on your system's CPU, GPU, RAM, and available resources.
+Because the AI model runs locally on your own hardware, performance depends on your system's CPU, GPU, RAM, and available resources.
 
-> **⚠️ Performance Note:** Qwen3 8B is a relatively large local model. Lower-end laptops and desktops may experience slower response times, longer processing times, or higher system resource usage. Systems with more RAM and a capable GPU will generally provide a smoother experience.
+> **⚠️ Performance Note:** Scribe currently uses **Qwen3 8B**, which is a relatively large local model. Lower-end laptops and desktops may experience slower response times, longer processing times, or higher system resource usage. Systems with more RAM and a capable GPU will generally provide a smoother experience.
 
 1. Download and install [Ollama](https://ollama.com/download).
-2. Open your terminal and pull the required model:
+
+2. Open your terminal and download the model used by Scribe:
+
    ```bash
-   ollama run qwen3:8b
+   ollama pull qwen3:8b
+   ```
+
+3. Verify that the model is available:
+
+   ```bash
+   ollama list
+   ```
+
+   Make sure `qwen3:8b` appears in the list before running Scribe.
+
+> **💡 For lower-end hardware:** You can try **Qwen3 4B Instruct** if Qwen3 8B runs too slowly on your system. Scribe has not been extensively tested with other models yet, so compatibility and output quality may vary.
 
 ---
 
