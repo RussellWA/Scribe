@@ -1,6 +1,6 @@
 # Scribe
 
-Scribe is a privacy-first, desktop-based meeting minutes generator. Built with [Wails](https://wails.io/) (Go + React), it uses local AI via Ollama to instantly transform your messy meeting notes into structured, professional summaries without ever sending your data to the cloud.
+Scribe is a privacy-first, desktop-based meeting minutes generator designed for Indonesian-language meetings. Built with [Wails](https://wails.io/) (Go + React), it uses local AI via Ollama to instantly transform your messy meeting notes into structured, professional summaries without ever sending your data to the cloud.
 
 <!--
 <p align="center">
