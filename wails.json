@@ -9,5 +9,8 @@
   "author": {
     "name": "Russell",
     "email": "rvssell.wa@gmail.com"
+  },
+  "windows": {
+    "frameless": true
   }
 }
