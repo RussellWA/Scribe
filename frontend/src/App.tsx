@@ -10,6 +10,7 @@ import type { Page } from './types/Page';
 import { CheckUpdates } from '../wailsjs/go/main/App'; 
 import { BrowserOpenURL } from '../wailsjs/runtime/runtime'; 
 import { service } from '../wailsjs/go/models';
+import TitleBar from './components/TitleBar';
 
 export default function App() {
     const [page, setPage] = useState<Page>('home');
@@ -29,18 +30,36 @@ export default function App() {
     const renderPage = () => {
         switch (page) {
             case 'glossary':
-                return <Glossary onBack={() => setPage('home')} />;
+                return (
+                    <>
+                        <TitleBar />
+                        <Glossary onBack={() => setPage('home')} />
+                    </>
+                );
             case 'normalization':
-                return <Normalization onBack={() => setPage('home')} />;
+                return (
+                    <>
+                        <TitleBar />
+                        <Normalization onBack={() => setPage('home')} />
+                    </>
+                );
             case 'failure':
-                return <Failure onBack={() => setPage('home')} />;
+                return (
+                    <>
+                        <TitleBar />
+                        <Failure onBack={() => setPage('home')} />
+                    </>
+                )
             default:
                 return (
-                    <Home
-                        openGlossary={() => setPage('glossary')}
-                        openNormalization={() => setPage('normalization')}
-                        openFailure={() => setPage('failure')}
-                    />
+                    <>
+                        <TitleBar />                    
+                        <Home
+                            openGlossary={() => setPage('glossary')}
+                            openNormalization={() => setPage('normalization')}
+                            openFailure={() => setPage('failure')}
+                        />
+                    </>
                 );
         }
     };

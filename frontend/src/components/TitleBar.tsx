@@ -4,7 +4,7 @@ import {
     WindowToggleMaximise,
     Quit,
 } from "../../wailsjs/runtime/runtime";
-import scribeLogo from "../assets/appicon.png";
+import scribeLogo from "../assets/logo.svg";
 
 export default function TitleBar() {
     const [isMac, setIsMac] = useState(false);
@@ -63,7 +63,7 @@ export default function TitleBar() {
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Minimize"
                     >
-                        −
+                        -
                     </button>
 
                     <button
@@ -81,7 +81,7 @@ export default function TitleBar() {
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Close"
                     >
-                        ×
+                        x
                     </button>
                 </div>
             )}
