@@ -21,10 +21,9 @@ type OllamaTagsResponse struct {
 
 func (s *OllamaService) FetchInstalledModels() ([]string, error) {
 	client := http.Client{
-		Timeout: 2 * time.Second, // Fast timeout so UI doesn't hang if Ollama is closed
+		Timeout: 2 * time.Second,
 	}
 
-	// Uses your existing base URL
 	resp, err := client.Get("http://127.0.0.1:11434/api/tags")
 	if err != nil {
 		return nil, fmt.Errorf("could not connect to Ollama: %w", err)

@@ -1,5 +1,5 @@
 import ThreeColumnManager from '../components/ThreeColumnManager';
-import { getFailure, saveFailure } from '../lib/api'; // Adjust to your actual Wails API calls
+import { getFailure, saveFailure } from '../lib/api';
 
 export default function Failure({ onBack }: { onBack: () => void }) {
     return (

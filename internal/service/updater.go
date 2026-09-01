@@ -41,7 +41,6 @@ func CheckForUpdates() (UpdateInfo, error) {
 		return UpdateInfo{}, err
 	}
 
-	// 3. Compare the versions
 	updateAvailable := false
 	if release.TagName != "" && release.TagName != CurrentVersion {
 		updateAvailable = true

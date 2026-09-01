@@ -24,7 +24,7 @@ export default function CustomScroll({ children, className = "" }: CustomScrollP
         }
 
         const ratio = clientHeight / scrollHeight;
-        const newThumbHeight = Math.max(ratio * clientHeight, 24); // 24px min thumb size
+        const newThumbHeight = Math.max(ratio * clientHeight, 24);
         const maxThumbTop = clientHeight - newThumbHeight;
         const scrollRatio = scrollTop / (scrollHeight - clientHeight);
 

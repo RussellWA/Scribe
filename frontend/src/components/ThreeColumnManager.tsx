@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import ConfirmDialog from './ConfirmDialog';
 import ThreeColumnDialog, { type ThreeColumnEntry } from './ThreeColumnDialog';
 
-// The new shape of your data
 type ThreeColumnData = Record<string, { wrong: string; right: string }>;
 
 interface ThreeColumnManagerProps {

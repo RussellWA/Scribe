@@ -24,10 +24,8 @@ export function useKeyboardShortcut(
                 return;
             }
 
-            // Treat Ctrl (Windows/Linux) and Cmd (macOS) as the same modifier
             const isCmdOrCtrl = event.ctrlKey || event.metaKey;
 
-            // Check shortcut
             if (
                 event.key.toLowerCase() !== key.toLowerCase() ||
                 !!options.ctrl !== isCmdOrCtrl ||
