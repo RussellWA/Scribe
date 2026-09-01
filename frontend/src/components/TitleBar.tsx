@@ -3,6 +3,7 @@ import {
     WindowMinimise,
     WindowToggleMaximise,
     Quit,
+    WindowIsMaximised,
 } from "../../wailsjs/runtime/runtime";
 // import scribeLogo from "../assets/logo.svg";
 import scribeLogo from "../assets/appicon.png";
@@ -14,9 +15,15 @@ export default function TitleBar() {
         setIsMac(navigator.platform.toLowerCase().includes("mac"));
     }, []);
 
+    const [isMaximized, setIsMaximized] = useState(false);
+
+    useEffect(() => {
+        WindowIsMaximised().then(setIsMaximized);
+    }, []);
+
     return (
         <div
-            className="h-10 w-full flex items-center select-none"
+            className="relative h-10 w-full flex items-center select-none"
             style={{ "--wails-draggable": "drag" } as React.CSSProperties}
         >
             {isMac && (
@@ -44,7 +51,7 @@ export default function TitleBar() {
                 </div>
             )}
 
-            <div className="flex-1 flex items-center justify-center">
+           <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
                 <img
                     src={scribeLogo}
                     alt="Scribe"
@@ -68,11 +75,14 @@ export default function TitleBar() {
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Minimize"
                     >
-                        -
+                        −
                     </button>
 
                     <button
-                        onClick={WindowToggleMaximise}
+                        onClick={async () => {
+                            await WindowToggleMaximise();
+                            setIsMaximized(await WindowIsMaximised());
+                        }}
                         className="
                             h-full w-12
                             flex items-center justify-center
@@ -82,9 +92,9 @@ export default function TitleBar() {
                             transition-colors
                         "
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
-                        aria-label="Maximize"
+                        aria-label={isMaximized ? "Restore" : "Maximize"}
                     >
-                        □
+                        {isMaximized ? "🗗" : "□"}
                     </button>
 
                     <button
@@ -100,7 +110,7 @@ export default function TitleBar() {
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Close"
                     >
-                        x
+                        ×
                     </button>
                 </div>
             )}
