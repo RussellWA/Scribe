@@ -61,7 +61,7 @@ export default function TitleBar() {
 
             {/* Windows controls */}
             {!isMac && (
-                <div className="flex items-center h-full">
+                <div className="ml-auto flex items-center h-full">
                     <button
                         onClick={WindowMinimise}
                         className="

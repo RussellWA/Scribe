@@ -26,6 +26,7 @@ export namespace types {
 	export class GenerateRequest {
 	    title: string;
 	    notes: string;
+	    model: string;
 	
 	    static createFrom(source: any = {}) {
 	        return new GenerateRequest(source);
@@ -35,6 +36,7 @@ export namespace types {
 	        if ('string' === typeof source) source = JSON.parse(source);
 	        this.title = source["title"];
 	        this.notes = source["notes"];
+	        this.model = source["model"];
 	    }
 	}
 	export class GenerateResponse {
