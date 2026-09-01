@@ -57,7 +57,14 @@ export default function TitleBar() {
                 <div className="flex items-center h-full">
                     <button
                         onClick={WindowMinimise}
-                        className="h-full w-12 hover:bg-black/5 dark:hover:bg-white/10"
+                        className="
+                            h-full w-12
+                            flex items-center justify-center
+                            text-gray-400
+                            hover:text-gray-700
+                            hover:bg-gray-100
+                            transition-colors
+                        "
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Minimize"
                     >
@@ -66,7 +73,14 @@ export default function TitleBar() {
 
                     <button
                         onClick={WindowToggleMaximise}
-                        className="h-full w-12 hover:bg-black/5 dark:hover:bg-white/10"
+                        className="
+                            h-full w-12
+                            flex items-center justify-center
+                            text-gray-400
+                            hover:text-gray-700
+                            hover:bg-gray-100
+                            transition-colors
+                        "
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Maximize"
                     >
@@ -75,7 +89,14 @@ export default function TitleBar() {
 
                     <button
                         onClick={Quit}
-                        className="h-full w-12 hover:bg-red-500 hover:text-white"
+                        className="
+                            h-full w-12
+                            flex items-center justify-center
+                            text-gray-400
+                            hover:text-white
+                            hover:bg-red-500
+                            transition-colors
+                        "
                         style={{ "--wails-draggable": "no-drag" } as React.CSSProperties}
                         aria-label="Close"
                     >

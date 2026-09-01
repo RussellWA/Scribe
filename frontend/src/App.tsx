@@ -30,56 +30,38 @@ export default function App() {
     const renderPage = () => {
         switch (page) {
             case 'glossary':
-                return (
-                    <>
-                        <TitleBar />
-                        <Glossary onBack={() => setPage('home')} />
-                    </>
-                );
+                return <Glossary onBack={() => setPage('home')} />;
             case 'normalization':
-                return (
-                    <>
-                        <TitleBar />
-                        <Normalization onBack={() => setPage('home')} />
-                    </>
-                );
+                return <Normalization onBack={() => setPage('home')} />;
             case 'failure':
-                return (
-                    <>
-                        <TitleBar />
-                        <Failure onBack={() => setPage('home')} />
-                    </>
-                )
+                return <Failure onBack={() => setPage('home')} />;
             default:
-                return (
-                    <>
-                        <TitleBar />                    
-                        <Home
-                            openGlossary={() => setPage('glossary')}
-                            openNormalization={() => setPage('normalization')}
-                            openFailure={() => setPage('failure')}
-                        />
-                    </>
+                return (              
+                    <Home
+                        openGlossary={() => setPage('glossary')}
+                        openNormalization={() => setPage('normalization')}
+                        openFailure={() => setPage('failure')}
+                    />
                 );
         }
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <div className="h-screen flex flex-col overflow-hidden">
+            <TitleBar />  
             {updateInfo && (
-                <div style={{ backgroundColor: '#ffcc00', padding: '10px', textAlign: 'center', color: 'black', fontWeight: 'bold' }}>
+                <div className="bg-yellow-400 p-2.5 text-center text-black font-bold shrink-0">
                     🚀 A new version of Scribe ({updateInfo.latestVersion}) is available! 
                     <button 
                         onClick={() => BrowserOpenURL(updateInfo.releaseUrl)}
-                        style={{ marginLeft: '10px', padding: '4px 12px', cursor: 'pointer', background: 'white', border: '1px solid black', borderRadius: '4px' }}
+                        className="ml-2 px-3 py-1 cursor-pointer bg-white border border-black rounded"
                     >
                         Download Now
                     </button>
                 </div>
             )}
 
-            {/* Your actual App Content */}
-            <div style={{ flex: 1, overflow: 'auto' }}>
+            <div className="flex-1 min-h-0 overflow-auto">
                 {renderPage()}
             </div>
             
