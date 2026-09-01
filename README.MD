@@ -82,7 +82,7 @@ Because the AI model runs locally on your own hardware, performance depends on y
 
    Make sure `qwen3:8b` appears in the list before running Scribe.
 
-> **💡 For lower-end hardware:** You can try **Qwen3 4B Instruct** if Qwen3 8B runs too slowly on your system. Scribe has not been extensively tested with other models yet, so compatibility and output quality may vary.
+> **For lower-end hardware:** You can try **Qwen3 4B Instruct** if Qwen3 8B runs too slowly on your system. Scribe has not been extensively tested with other models yet, so compatibility and output quality may vary.
 
 ---
 
