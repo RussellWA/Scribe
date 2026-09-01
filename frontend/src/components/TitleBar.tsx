@@ -5,7 +5,6 @@ import {
     Quit,
     WindowIsMaximised,
 } from "../../wailsjs/runtime/runtime";
-// import scribeLogo from "../assets/logo.svg";
 import scribeLogo from "../assets/appicon.png";
 
 export default function TitleBar() {

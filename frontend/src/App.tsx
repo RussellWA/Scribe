@@ -11,6 +11,7 @@ import { CheckUpdates } from '../wailsjs/go/main/App';
 import { BrowserOpenURL } from '../wailsjs/runtime/runtime'; 
 import { service } from '../wailsjs/go/models';
 import TitleBar from './components/TitleBar';
+import CustomScroll from './components/CustomScroll';
 
 export default function App() {
     const [page, setPage] = useState<Page>('home');
@@ -60,9 +61,11 @@ export default function App() {
                     </button>
                 </div>
             )}
-
+            
             <div className="flex-1 min-h-0 overflow-auto">
-                {renderPage()}
+                <CustomScroll className="h-full">
+                    {renderPage()}
+                </CustomScroll>
             </div>
             
         </div>
