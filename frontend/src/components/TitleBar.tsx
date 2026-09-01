@@ -4,7 +4,8 @@ import {
     WindowToggleMaximise,
     Quit,
 } from "../../wailsjs/runtime/runtime";
-import scribeLogo from "../assets/logo.svg";
+// import scribeLogo from "../assets/logo.svg";
+import scribeLogo from "../assets/appicon.png";
 
 export default function TitleBar() {
     const [isMac, setIsMac] = useState(false);
@@ -49,9 +50,6 @@ export default function TitleBar() {
                     alt="Scribe"
                     className="h-5 w-auto object-contain"
                 />
-                <span className="text-sm font-semibold tracking-tight">
-                    Scribe
-                </span>
             </div>
 
             {/* Windows controls */}
