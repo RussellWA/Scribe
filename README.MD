@@ -14,7 +14,7 @@ Scribe is a privacy-first, desktop-based meeting minutes generator designed for 
 </p>
 -->
 
-<!-- [Hero GIF / Screenshot] -->
+![Main Workspace](https://res.cloudinary.com/df9yjc71f/image/upload/v1788403822/Workspace_with_Update_f2fbcp.png)
 
 ---
 
