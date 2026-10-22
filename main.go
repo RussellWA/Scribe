@@ -1,6 +1,7 @@
 package main
 
 import (
+	"changeme/backend/llm"
 	"embed"
 
 	"log"
@@ -38,7 +39,7 @@ func main() {
 		Name:        "Scribe",
 		Description: "A demo of using raw HTML & CSS",
 		Services: []application.Service{
-			application.NewService(&GreetService{}),
+			application.NewService(&llm.LLMService{}),
 		},
 		Assets: application.AssetOptions{
 			Handler: application.AssetFileServerFS(assets),
